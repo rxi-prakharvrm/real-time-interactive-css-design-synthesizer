@@ -1,0 +1,341 @@
+/* Font family cdn  */
+@import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Flamenco:wght@300;400&family=KoHo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Media queries  */
+@media screen and (min-width: 100rem) {
+  .code-container {
+    width: 80%;
+  }
+
+  .text-input {
+    width: 80%;
+  }
+}
+
+/* Set default behavious of the elements */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-weight: normal;
+  background-color: #fff;
+}
+
+/* Web page wrapper */
+.layout-container {
+  height: auto;
+}
+
+/* Header of the website  */
+.header {
+  font-family: 'courier new', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.5rem 1.2rem;
+  background-color: #bdbdbd;
+  color: #000000;
+}
+
+/* Styling of top menu  */
+.top-menu {
+  width: 100%;
+  padding: 2rem;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #e1e1e1;
+  box-shadow: 0 0.5rem 1rem -0.6rem #e1e1e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.select-font-dd-ctr,
+.font-size-dd-ctr,
+.font-weight-dd-ctr,
+.text-color-dd-ctr,
+.bg-color-dd-ctr,
+.text-border-color-dd-ctr,
+.text-cases-dd-ctr,
+.text-shadow-dd-ctr {
+  position: relative;
+}
+
+.select-font-btn-ctr,
+.font-size-btn-ctr,
+.font-weight-btn-ctr,
+.text-color-btn-ctr,
+.bg-color-btn-ctr,
+.text-border-color-btn-ctr,
+.text-cases-btn-ctr,
+.text-shadow-btn-ctr {
+  width: 20rem;
+  margin: 0.2rem;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #000;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: nowrap;
+  text-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.font-size-btn-ctr,
+.font-weight-btn-ctr {
+  width: 8rem;
+}
+
+.text-cases-btn-ctr,
+.text-shadow-btn-ctr {
+  width: 12rem;
+}
+
+.select-font-btn,
+.font-size-btn,
+.font-weight-btn,
+.text-color-btn,
+.bg-color-btn,
+.text-border-color-btn,
+.text-cases-btn,
+.text-shadow-btn {
+  width: 80%;
+  outline: none;
+  border: none;
+  font-size: 1.3rem;
+  text-align: left;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.select-font,
+.font-size,
+.font-weight,
+.text-color,
+.bg-color,
+.text-border-color,
+.text-cases,
+.text-shadow {
+  position: absolute;
+  top: 2.8rem;
+  left: 0;
+  list-style: none;
+  padding: 0.5rem 0;
+  background-color: #fff;
+  box-shadow: 2px 2px 10px 2px #dedede;
+  height: auto;
+  max-height: 35.5rem;
+  width: 20rem;
+  overflow-y: auto;
+}
+
+/* z-index in top-menu */
+.text-shadow {
+  z-index: 10;
+}
+
+.text-cases {
+  z-index: 11;
+}
+
+.text-border-color {
+  z-index: 12;
+}
+
+.bg-color {
+  z-index: 13;
+}
+
+.text-color {
+  z-index: 14;
+}
+
+.font-weight {
+  z-index: 15;
+}
+
+.font-size {
+  z-index: 16;
+}
+
+.select-font {
+  z-index: 17;
+}
+
+/* =========================== */
+
+.font-size,
+.font-weight {
+  width: 8rem;
+}
+
+.text-cases,
+.text-shadow {  
+  width: 12rem;
+}
+
+.select-font li,
+.font-size li,
+.font-weight li,
+.text-color li,
+.bg-color li,
+.text-border-color li,
+.text-cases li,
+.text-shadow li {
+  padding: 0.2rem 1.2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select-font li:hover,
+.font-size li:hover,
+.font-weight li:hover,
+.text-color li:hover,
+.bg-color li:hover,
+.text-border-color li:hover,
+.text-cases li:hover
+.text-shadow li:hover {
+  background-color: #f1f1f1;
+}
+
+.text-color-box,
+.bg-color-box,
+.text-border-color-box {
+  height: 12px;
+  width: 12px;
+  background-color: #000;
+  border: 1px solid #888;
+}
+
+.text-color-btn-box,
+.bg-color-btn-box,
+.text-border-color-btn-box {
+  height: 12px;
+  width: 12px;
+  background-color: #000;
+  border: 1px solid #888;
+}
+
+.bg-color-btn-box {
+  background-color: #fff;
+}
+
+.text-border-color-btn-box {
+  background-color: transparent;
+}
+
+.btn {
+  border: 1px solid #888;
+  outline: none;
+  padding: 0.5rem 1.2rem;
+  background-color: #fff;
+  margin: 0.2rem;
+  cursor: pointer;
+}
+
+/* Reset  */
+.btn-clear {
+  border: none;
+  outline: none;
+  background-color: #be2626;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* styling of main section which contanier text-container and code-container */
+.main-section {
+  width: 100%;
+  padding: 10rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+/* Text input container styling */
+.text-container {
+  width: 100%;
+  margin-bottom: 10rem;
+}
+
+.text-input {
+  width: 80%;
+  padding: 1rem;
+  font-size: 5rem;
+  display: block;
+  border: none;
+  outline: none;
+  color: #333;
+  background-color: transparent;
+  text-align: center;
+  margin: auto;
+}
+
+/* Code container styling */
+.code-container {
+  font-family: "courier new";
+  line-height: 2.5rem;
+  height: auto;
+  width: 80%;
+  word-wrap: wrap;
+  font-size: 1.8rem;
+  padding: 2rem;
+  border-radius: 10px;
+  color: #000;
+  background-color: #f9f9f9;
+  border: 1px solid #dedede;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+/* Copy code button styling */
+.copy-code-btn {
+  font-size: 2.5rem;
+  padding: 1rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+}
+
+/* JavaScript classes */
+.hidden {
+  display: none;
+}
+
+.underline-text {
+  text-decoration: underline;
+}
+
+.italic-text {
+  font-style: italic;
+}
+
+.bold-text {  
+  font-weight: bold;
+}
+
+.active {
+  background-color: #4345ca;
+  color: #fff;
+}

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Formatting App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="layout-container">
+        <div class="header">CSS Generator</div>
+        <div class="top-menu">
+            <!-- Selecting the font family -->
+            <div class="select-font-dd-ctr">
+                <div class="select-font-btn-ctr">
+                    <button class="select-font-btn">
+                        Poppins
+                    </button>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <ul class="select-font">
+                    <li>Alef</li>
+                    <li>Algerian</li>
+                    <li>Arial</li>
+                    <li>Arial Rounded MT</li>
+                    <li>Arial Unicode MS</li>
+                    <li>Arimo</li>
+                    <li>Bookman Old Style</li>
+                    <li>Calibri</li>
+                    <li>Cambria</li>
+                    <li>Century Gothic</li>
+                    <li>Elephant</li>
+                    <li>Flamenco</li>
+                    <li>Georgia</li>
+                    <li>Gill Sans MT</li>
+                    <li>Helvetica</li>
+                    <li>Impact</li>
+                    <li>KoHo</li>
+                    <li>Lucida Console</li>
+                    <li>Lucida Sans</li>
+                    <li>Magneto</li>
+                    <li>MS Reference Sans Serif</li>
+                    <li>Noto Sans</li>
+                    <li>Open Sans</li>
+                    <li>Poppins</li>
+                    <li>Segoe UI</li>
+                    <li>Times New Roman</li>
+                    <li>Tahoma</li>
+                    <li>Verdana</li>
+                </ul>
+            </div>
+
+            <!-- Selecting the font size -->
+            <div class="font-size-dd-ctr">
+                <div class="font-size-btn-ctr">
+                    <button class="font-size-btn">
+                        Times New Roman
+                    </button>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <ul class="font-size">
+                    <li>20</li>
+                    <li>25</li>
+                    <li>30</li>
+                    <li>35</li>
+                    <li>40</li>
+                    <li>45</li>
+                    <li>50</li>
+                    <li>55</li>
+                    <li>60</li>
+                    <li>65</li>
+                    <li>70</li>
+                    <li>75</li>
+                    <li>80</li>
+                    <li>85</li>
+                    <li>90</li>
+                    <li>95</li>
+                    <li>100</li>
+                    <li>105</li>
+                    <li>110</li>
+                    <li>115</li>
+                    <li>120</li>
+                </ul>
+            </div>
+
+            <!-- Select font weight  -->
+            <div class="font-weight-dd-ctr">
+                <div class="font-weight-btn-ctr">
+                    <span class="font-weight-btn-box"></span>
+                    <button class="font-weight-btn">
+                        300
+                    </button>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <ul class="font-weight">
+                    <li>100</li>
+                    <li>200</li>
+                    <li>300</li>
+                    <li>400</li>
+                    <li>500</li>
+                    <li>600</li>
+                    <li>700</li>
+                    <li>800</li>
+                    <li>900</li>
+                </ul>
+            </div>
+
+
+            <!-- Selecting the text color -->
+            <div class="text-color-dd-ctr">
+                <div class="text-color-btn-ctr">
+                    <span class="text-color-btn-box"></span>
+                    <button class="text-color-btn">
+                        Text Color
+                    </button>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <ul class="text-color">
+                    <li>Transparent<span class="text-color-box"></span></li>
+                    <li>AliceBlue<span class="text-color-box"></span></li>
+                    <li>AntiqueWhite<span class="text-color-box"></span></li>
+                    <li>Aqua<span class="text-color-box"></span></li>
+                    <li>Aquamarine<span class="text-color-box"></span></li>
+                    <li>Azure<span class="text-color-box"></span></li>
+                    <li>Beige<span class="text-color-box"></span></li>
+                    <li>Bisque<span class="text-color-box"></span></li>
+                    <li>Black<span class="text-color-box"></span></li>
+                    <li>BlanchedAlmond<span class="text-color-box"></span></li>
+                    <li>Blue<span class="text-color-box"></span></li>
+                    <li>BlueViolet<span class="text-color-box"></span></li>
+                    <li>Brown<span class="text-color-box"></span></li>
+                    <li>BurlyWood<span class="text-color-box"></span></li>
+                    <li>CadetBlue<span class="text-color-box"></span></li>
+                    <li>Chartreuse<span class="text-color-box"></span></li>
+                    <li>Chocolate<span class="text-color-box"></span></li>
+                    <li>Coral<span class="text-color-box"></span></li>
+                    <li>CornflowerBlue<span class="text-color-box"></span></li>
+                    <li>Cornsilk<span class="text-color-box"></span></li>
+                    <li>Crimson<span class="text-color-box"></span></li>
+                    <li>Cyan<span class="text-color-box"></span></li>
+                    <li>DarkBlue<span class="text-color-box"></span></li>
+                    <li>DarkCyan<span class="text-color-box"></span></li>
+                    <li>DarkGoldenRod<span class="text-color-box"></span></li>
+                    <li>DarkGray<span class="text-color-box"></span></li>
+                    <li>DarkGrey<span class="text-color-box"></span></li>
+                    <li>DarkGreen<span class="text-color-box"></span></li>
+                    <li>GarkKhaki<span class="text-color-box"></span></li>
+                    <li>DarkOliveGreen<span class="text-color-box"></span></li>
+                    <li>DarkOrange<span class="text-color-box"></span></li>
+                    <li>DarkOrchid<span class="text-color-box"></span></li>
+                    <li>DarkRed<span class="text-color-box"></span></li>
+                    <li>DarkSalmon<span class="text-color-box"></span></li>
+                    <li>DarkSeaGreen<span class="text-color-box"></span></li>
+                    <li>DarkSlateBlue<span class="text-color-box"></span></li>
+                    <li>DarkSlateGray<span class="text-color-box"></span></li>
+                    <li>DarkSlateGrey<span class="text-color-box"></span></li>
+                    <li>DarkTurquoise<span class="text-color-box"></span></li>
+                    <li>DarkViolet<span class="text-color-box"></span></li>
+                    <li>DeepPink<span class="text-color-box"></span></li>
+                    <li>DeepSkyBlue<span class="text-color-box"></span></li>
+                    <li>DimGray<span class="text-color-box"></span></li>
+                    <li>DimGrey<span class="text-color-box"></span></li>
+                    <li>DodgerBlue<span class="text-color-box"></span></li>
+                    <li>FireBrick<span class="text-color-box"></span></li>
+                    <li>FloralWhite<span class="text-color-box"></span></li>
+                    <li>ForestGreen<span class="text-color-box"></span></li>
+                    <li>Fuchsia<span class="text-color-box"></span></li>
+                    <li>Gainsboro<span class="text-color-box"></span></li>
+                    <li>GhostWhite<span class="text-color-box"></span></li>
+                    <li>Gold<span class="text-color-box"></span></li>
+                    <li>goldenRod<span class="text-color-box"></span></li>
+                    <li>Gray<span class="text-color-box"></span></li>
+                    <li>Grey<span class="text-color-box"></span></li>
+                    <li>Green<span class="text-color-box"></span></li>
+                    <li>GreenYellow<span class="text-color-box"></span></li>
+                    <li>HoneyDew<span class="text-color-box"></span></li>
+                    <li>HotPink<span class="text-color-box"></span></li>
+                    <li>IndianRed<span class="text-color-box"></span></li>
+                    <li>Indigo<span class="text-color-box"></span></li>
+                    <li>Ivory<span class="text-color-box"></span></li>
+                    <li>Khaki<span class="text-color-box"></span></li>
+                    <li>Lavender<span class="text-color-box"></span></li>
+                    <li>LavenderBlush<span class="text-color-box"></span></li>
+                    <li>LawnGreen<span class="text-color-box"></span></li>
+                    <li>LemonChiffon<span class="text-color-box"></span></li>
+                    <li>LightBlue<span class="text-color-box"></span></li>
+                    <li>LightCoral<span class="text-color-box"></span></li>
+                    <li>LightCyan<span class="text-color-box"></span></li>
+                    <li>LightGoldenRodYellow<span class="text-color-box"></span></li>
+                    <li>LightGray<span class="text-color-box"></span></li>
+                    <li>LightGrey<span class="text-color-box"></span></li>
+                    <li>LightGreen<span class="text-color-box"></span></li>
+                    <li>LightPink<span class="text-color-box"></span></li>
+                    <li>LightSalmon<span class="text-color-box"></span></li>
+                    <li>LightSeaGreen<span class="text-color-box"></span></li>
+                    <li>LightSkyBlue<span class="text-color-box"></span></li>
+                    <li>LightSlateGray<span class="text-color-box"></span></li>
+                    <li>LightSlateGrey<span class="text-color-box"></span></li>
+                    <li>LightSteelBlue<span class="text-color-box"></span></li>
+                    <li>LightYellow<span class="text-color-box"></span></li>
+                    <li>Lime<span class="text-color-box"></span></li>
+                    <li>LimeGreen<span class="text-color-box"></span></li>
+                    <li>Linen<span class="text-color-box"></span></li>
+                    <li>Magenta<span class="text-color-box"></span></li>
+                    <li>Maroon<span class="text-color-box"></span></li>
+                    <li>MediumBlue<span class="text-color-box"></span></li>
+                    <li>MediumOrchid<span class="text-color-box"></span></li>
+                    <li>MediumPurple<span class="text-color-box"></span></li>
+                    <li>MediumSeaGreen<span class="text-color-box"></span></li>
+                    <li>MediumSlateBlue<span class="text-color-box"></span></li>
+                    <li>MediumSpringGreen<span class="text-color-box"></span></li>
+                    <li>MediumTurquoise<span class="text-color-box"></span></li>
+                    <li>MediumVioletRed<span class="text-color-box"></span></li>
+                    <li>MidnightBlue<span class="text-color-box"></span></li>
+                    <li>MintCream<span class="text-color-box"></span></li>
+                    <li>MistyRose<span class="text-color-box"></span></li>
+                    <li>Moccasin<span class="text-color-box"></span></li>
+                    <li>NavajoWhite<span class="text-color-box"></span></li>
+                    <li>Navy<span class="text-color-box"></span></li>
+                    <li>OldLace<span class="text-color-box"></span></li>
+                    <li>Olive<span class="text-color-box"></span></li>
+                    <li>OliveDrab<span class="text-color-box"></span></li>
+                    <li>Orange<span class="text-color-box"></span></li>
+                    <li>OrangeRed<span class="text-color-box"></span></li>
+                    <li>Orchid<span class="text-color-box"></span></li>
+                    <li>PaleGoldenRod<span class="text-color-box"></span></li>
+                    <li>PaleGreen<span class="text-color-box"></span></li>
+                    <li>PaleTurquoise<span class="text-color-box"></span></li>
+                    <li>PaleVioletRed<span class="text-color-box"></span></li>
+                    <li>PapayaWhip<span class="text-color-box"></span></li>
+                    <li>PeachPuff<span class="text-color-box"></span></li>
+                    <li>Peru<span class="text-color-box"></span></li>
+                    <li>Pink<span class="text-color-box"></span></li>
+                    <li>Plum<span class="text-color-box"></span></li>
+                    <li>PowderBlue<span class="text-color-box"></span></li>
+                    <li>Purple<span class="text-color-box"></span></li>
+                    <li>RebeccaPurple<span class="text-color-box"></span></li>
+                    <li>Red<span class="text-color-box"></span></li>
+                    <li>RosyBrown<span class="text-color-box"></span></li>
+                    <li>RoyalBlue<span class="text-color-box"></span></li>
+                    <li>SaddleBrown<span class="text-color-box"></span></li>
+                    <li>Salmon<span class="text-color-box"></span></li>
+                    <li>SandyBrown<span class="text-color-box"></span></li>
+                    <li>SeaGreen<span class="text-color-box"></span></li>
+                    <li>SeaShell<span class="text-color-box"></span></li>
+                    <li>Sienna<span class="text-color-box"></span></li>
+                    <li>Silver<span class="text-color-box"></span></li>
+                    <li>SkyBlue<span class="text-color-box"></span></li>
+                    <li>SlateBlue<span class="text-color-box"></span></li>
+                    <li>SlateGray<span class="text-color-box"></span></li>
+                    <li>SlateGrey<span class="text-color-box"></span></li>
+                    <li>Snow<span class="text-color-box"></span></li>
+                    <li>SpringGreen<span class="text-color-box"></span></li>
+                    <li>SteelBlue<span class="text-color-box"></span></li>
+                    <li>Tan<span class="text-color-box"></span></li>
+                    <li>Teal<span class="text-color-box"></span></li>
+                    <li>Tomato<span class="text-color-box"></span></li>
+                    <li>Turquoise<span class="text-color-box"></span></li>
+                    <li>Violet<span class="text-color-box"></span></li>
+                    <li>Wheat<span class="text-color-box"></span></li>
+                    <li>White<span class="text-color-box"></span></li>
+                    <li>Whitesmoke<span class="text-color-box"></span></li>
+                    <li>Yellow<span class="text-color-box"></span></li>
+                    <li>YellowGreen<span class="text-color-box"></span></li>
+                </ul>
+            </div>
+
+            <!-- Selecting the background color -->
+            <div class="bg-color-dd-ctr">
+                <div class="bg-color-btn-ctr">
+                    <span class="bg-color-btn-box"></span>
+                    <button class="bg-color-btn">
+                        Background Color
+                    </button>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <ul class="bg-color">
+                    <li>Transparent<span class="bg-color-box"></span></li>
+                    <li>AliceBlue<span class="bg-color-box"></span></li>
+                    <li>AntiqueWhite<span class="bg-color-box"></span></li>
+                    <li>Aqua<span class="bg-color-box"></span></li>
+                    <li>Aquamarine<span class="bg-color-box"></span></li>
+                    <li>Azure<span class="bg-color-box"></span></li>
+                    <li>Beige<span class="bg-color-box"></span></li>
+                    <li>Bisque<span class="bg-color-box"></span></li>
+                    <li>Black<span class="bg-color-box"></span></li>
+                    <li>BlanchedAlmond<span class="bg-color-box"></span></li>
+                    <li>Blue<span class="bg-color-box"></span></li>
+                    <li>BlueViolet<span class="bg-color-box"></span></li>
+                    <li>Brown<span class="bg-color-box"></span></li>
+                    <li>BurlyWood<span class="bg-color-box"></span></li>
+                    <li>CadetBlue<span class="bg-color-box"></span></li>
+                    <li>Chartreuse<span class="bg-color-box"></span></li>
+                    <li>Chocolate<span class="bg-color-box"></span></li>
+                    <li>Coral<span class="bg-color-box"></span></li>
+                    <li>CornflowerBlue<span class="bg-color-box"></span></li>
+                    <li>Cornsilk<span class="bg-color-box"></span></li>
+                    <li>Crimson<span class="bg-color-box"></span></li>
+                    <li>Cyan<span class="bg-color-box"></span></li>
+                    <li>DarkBlue<span class="bg-color-box"></span></li>
+                    <li>DarkCyan<span class="bg-color-box"></span></li>
+                    <li>DarkGoldenRod<span class="bg-color-box"></span></li>
+                    <li>DarkGray<span class="bg-color-box"></span></li>
+                    <li>DarkGrey<span class="bg-color-box"></span></li>
+                    <li>DarkGreen<span class="bg-color-box"></span></li>
+                    <li>GarkKhaki<span class="bg-color-box"></span></li>
+                    <li>DarkOliveGreen<span class="bg-color-box"></span></li>
+                    <li>DarkOrange<span class="bg-color-box"></span></li>
+                    <li>DarkOrchid<span class="bg-color-box"></span></li>
+                    <li>DarkRed<span class="bg-color-box"></span></li>
+                    <li>DarkSalmon<span class="bg-color-box"></span></li>
+                    <li>DarkSeaGreen<span class="bg-color-box"></span></li>
+                    <li>DarkSlateBlue<span class="bg-color-box"></span></li>
+                    <li>DarkSlateGray<span class="bg-color-box"></span></li>
+                    <li>DarkSlateGrey<span class="bg-color-box"></span></li>
+                    <li>DarkTurquoise<span class="bg-color-box"></span></li>
+                    <li>DarkViolet<span class="bg-color-box"></span></li>
+                    <li>DeepPink<span class="bg-color-box"></span></li>
+                    <li>DeepSkyBlue<span class="bg-color-box"></span></li>
+                    <li>DimGray<span class="bg-color-box"></span></li>
+                    <li>DimGrey<span class="bg-color-box"></span></li>
+                    <li>DodgerBlue<span class="bg-color-box"></span></li>
+                    <li>FireBrick<span class="bg-color-box"></span></li>
+                    <li>FloralWhite<span class="bg-color-box"></span></li>
+                    <li>ForestGreen<span class="bg-color-box"></span></li>
+                    <li>Fuchsia<span class="bg-color-box"></span></li>
+                    <li>Gainsboro<span class="bg-color-box"></span></li>
+                    <li>GhostWhite<span class="bg-color-box"></span></li>
+                    <li>Gold<span class="bg-color-box"></span></li>
+                    <li>goldenRod<span class="bg-color-box"></span></li>
+                    <li>Gray<span class="bg-color-box"></span></li>
+                    <li>Grey<span class="bg-color-box"></span></li>
+                    <li>Green<span class="bg-color-box"></span></li>
+                    <li>GreenYellow<span class="bg-color-box"></span></li>
+                    <li>HoneyDew<span class="bg-color-box"></span></li>
+                    <li>HotPink<span class="bg-color-box"></span></li>
+                    <li>IndianRed<span class="bg-color-box"></span></li>
+                    <li>Indigo<span class="bg-color-box"></span></li>
+                    <li>Ivory<span class="bg-color-box"></span></li>
+                    <li>Khaki<span class="bg-color-box"></span></li>
+                    <li>Lavender<span class="bg-color-box"></span></li>
+                    <li>LavenderBlush<span class="bg-color-box"></span></li>
+                    <li>LawnGreen<span class="bg-color-box"></span></li>
+                    <li>LemonChiffon<span class="bg-color-box"></span></li>
+                    <li>LightBlue<span class="bg-color-box"></span></li>
+                    <li>LightCoral<span class="bg-color-box"></span></li>
+                    <li>LightCyan<span class="bg-color-box"></span></li>
+                    <li>LightGoldenRodYellow<span class="bg-color-box"></span></li>
+                    <li>LightGray<span class="bg-color-box"></span></li>
+                    <li>LightGrey<span class="bg-color-box"></span></li>
+                    <li>LightGreen<span class="bg-color-box"></span></li>
+                    <li>LightPink<span class="bg-color-box"></span></li>
+                    <li>LightSalmon<span class="bg-color-box"></span></li>
+                    <li>LightSeaGreen<span class="bg-color-box"></span></li>
+                    <li>LightSkyBlue<span class="bg-color-box"></span></li>
+                    <li>LightSlateGray<span class="bg-color-box"></span></li>
+                    <li>LightSlateGrey<span class="bg-color-box"></span></li>
+                    <li>LightSteelBlue<span class="bg-color-box"></span></li>
+                    <li>LightYellow<span class="bg-color-box"></span></li>
+                    <li>Lime<span class="bg-color-box"></span></li>
+                    <li>LimeGreen<span class="bg-color-box"></span></li>
+                    <li>Linen<span class="bg-color-box"></span></li>
+                    <li>Magenta<span class="bg-color-box"></span></li>
+                    <li>Maroon<span class="bg-color-box"></span></li>
+                    <li>MediumBlue<span class="bg-color-box"></span></li>
+                    <li>MediumOrchid<span class="bg-color-box"></span></li>
+                    <li>MediumPurple<span class="bg-color-box"></span></li>
+                    <li>MediumSeaGreen<span class="bg-color-box"></span></li>
+                    <li>MediumSlateBlue<span class="bg-color-box"></span></li>
+                    <li>MediumSpringGreen<span class="bg-color-box"></span></li>
+                    <li>MediumTurquoise<span class="bg-color-box"></span></li>
+                    <li>MediumVioletRed<span class="bg-color-box"></span></li>
+                    <li>MidnightBlue<span class="bg-color-box"></span></li>
+                    <li>MintCream<span class="bg-color-box"></span></li>
+                    <li>MistyRose<span class="bg-color-box"></span></li>
+                    <li>Moccasin<span class="bg-color-box"></span></li>
+                    <li>NavajoWhite<span class="bg-color-box"></span></li>
+                    <li>Navy<span class="bg-color-box"></span></li>
+                    <li>OldLace<span class="bg-color-box"></span></li>
+                    <li>Olive<span class="bg-color-box"></span></li>
+                    <li>OliveDrab<span class="bg-color-box"></span></li>
+                    <li>Orange<span class="bg-color-box"></span></li>
+                    <li>OrangeRed<span class="bg-color-box"></span></li>
+                    <li>Orchid<span class="bg-color-box"></span></li>
+                    <li>PaleGoldenRod<span class="bg-color-box"></span></li>
+                    <li>PaleGreen<span class="bg-color-box"></span></li>
+                    <li>PaleTurquoise<span class="bg-color-box"></span></li>
+                    <li>PaleVioletRed<span class="bg-color-box"></span></li>
+                    <li>PapayaWhip<span class="bg-color-box"></span></li>
+                    <li>PeachPuff<span class="bg-color-box"></span></li>
+                    <li>Peru<span class="bg-color-box"></span></li>
+                    <li>Pink<span class="bg-color-box"></span></li>
+                    <li>Plum<span class="bg-color-box"></span></li>
+                    <li>PowderBlue<span class="bg-color-box"></span></li>
+                    <li>Purple<span class="bg-color-box"></span></li>
+                    <li>RebeccaPurple<span class="bg-color-box"></span></li>
+                    <li>Red<span class="bg-color-box"></span></li>
+                    <li>RosyBrown<span class="bg-color-box"></span></li>
+                    <li>RoyalBlue<span class="bg-color-box"></span></li>
+                    <li>SaddleBrown<span class="bg-color-box"></span></li>
+                    <li>Salmon<span class="bg-color-box"></span></li>
+                    <li>SandyBrown<span class="bg-color-box"></span></li>
+                    <li>SeaGreen<span class="bg-color-box"></span></li>
+                    <li>SeaShell<span class="bg-color-box"></span></li>
+                    <li>Sienna<span class="bg-color-box"></span></li>
+                    <li>Silver<span class="bg-color-box"></span></li>
+                    <li>SkyBlue<span class="bg-color-box"></span></li>
+                    <li>SlateBlue<span class="bg-color-box"></span></li>
+                    <li>SlateGray<span class="bg-color-box"></span></li>
+                    <li>SlateGrey<span class="bg-color-box"></span></li>
+                    <li>Snow<span class="bg-color-box"></span></li>
+                    <li>SpringGreen<span class="bg-color-box"></span></li>
+                    <li>SteelBlue<span class="bg-color-box"></span></li>
+                    <li>Tan<span class="bg-color-box"></span></li>
+                    <li>Teal<span class="bg-color-box"></span></li>
+                    <li>Tomato<span class="bg-color-box"></span></li>
+                    <li>Turquoise<span class="bg-color-box"></span></li>
+                    <li>Violet<span class="bg-color-box"></span></li>
+                    <li>Wheat<span class="bg-color-box"></span></li>
+                    <li>White<span class="bg-color-box"></span></li>
+                    <li>Whitesmoke<span class="bg-color-box"></span></li>
+                    <li>Yellow<span class="bg-color-box"></span></li>
+                    <li>YellowGreen<span class="bg-color-box"></span></li>
+                </ul>
+            </div>
+
+            <!-- Selecting the text border -->
+            <div class="text-border-color-dd-ctr">
+                <div class="text-border-color-btn-ctr">
+                    <span class="text-border-color-btn-box"></span>
+                    <button class="text-border-color-btn">
+                        Text Border
+                    </button>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <ul class="text-border-color">
+                    <li>None<span class="text-border-color-box"></span></li>
+                    <li>AliceBlue<span class="text-border-color-box"></span></li>
+                    <li>AntiqueWhite<span class="text-border-color-box"></span></li>
+                    <li>Aqua<span class="text-border-color-box"></span></li>
+                    <li>Aquamarine<span class="text-border-color-box"></span></li>
+                    <li>Azure<span class="text-border-color-box"></span></li>
+                    <li>Beige<span class="text-border-color-box"></span></li>
+                    <li>Bisque<span class="text-border-color-box"></span></li>
+                    <li>Black<span class="text-border-color-box"></span></li>
+                    <li>BlanchedAlmond<span class="text-border-color-box"></span></li>
+                    <li>Blue<span class="text-border-color-box"></span></li>
+                    <li>BlueViolet<span class="text-border-color-box"></span></li>
+                    <li>Brown<span class="text-border-color-box"></span></li>
+                    <li>BurlyWood<span class="text-border-color-box"></span></li>
+                    <li>CadetBlue<span class="text-border-color-box"></span></li>
+                    <li>Chartreuse<span class="text-border-color-box"></span></li>
+                    <li>Chocolate<span class="text-border-color-box"></span></li>
+                    <li>Coral<span class="text-border-color-box"></span></li>
+                    <li>CornflowerBlue<span class="text-border-color-box"></span></li>
+                    <li>Cornsilk<span class="text-border-color-box"></span></li>
+                    <li>Crimson<span class="text-border-color-box"></span></li>
+                    <li>Cyan<span class="text-border-color-box"></span></li>
+                    <li>DarkBlue<span class="text-border-color-box"></span></li>
+                    <li>DarkCyan<span class="text-border-color-box"></span></li>
+                    <li>DarkGoldenRod<span class="text-border-color-box"></span></li>
+                    <li>DarkGray<span class="text-border-color-box"></span></li>
+                    <li>DarkGrey<span class="text-border-color-box"></span></li>
+                    <li>DarkGreen<span class="text-border-color-box"></span></li>
+                    <li>GarkKhaki<span class="text-border-color-box"></span></li>
+                    <li>DarkOliveGreen<span class="text-border-color-box"></span></li>
+                    <li>DarkOrange<span class="text-border-color-box"></span></li>
+                    <li>DarkOrchid<span class="text-border-color-box"></span></li>
+                    <li>DarkRed<span class="text-border-color-box"></span></li>
+                    <li>DarkSalmon<span class="text-border-color-box"></span></li>
+                    <li>DarkSeaGreen<span class="text-border-color-box"></span></li>
+                    <li>DarkSlateBlue<span class="text-border-color-box"></span></li>
+                    <li>DarkSlateGray<span class="text-border-color-box"></span></li>
+                    <li>DarkSlateGrey<span class="text-border-color-box"></span></li>
+                    <li>DarkTurquoise<span class="text-border-color-box"></span></li>
+                    <li>DarkViolet<span class="text-border-color-box"></span></li>
+                    <li>DeepPink<span class="text-border-color-box"></span></li>
+                    <li>DeepSkyBlue<span class="text-border-color-box"></span></li>
+                    <li>DimGray<span class="text-border-color-box"></span></li>
+                    <li>DimGrey<span class="text-border-color-box"></span></li>
+                    <li>DodgerBlue<span class="text-border-color-box"></span></li>
+                    <li>FireBrick<span class="text-border-color-box"></span></li>
+                    <li>FloralWhite<span class="text-border-color-box"></span></li>
+                    <li>ForestGreen<span class="text-border-color-box"></span></li>
+                    <li>Fuchsia<span class="text-border-color-box"></span></li>
+                    <li>Gainsboro<span class="text-border-color-box"></span></li>
+                    <li>GhostWhite<span class="text-border-color-box"></span></li>
+                    <li>Gold<span class="text-border-color-box"></span></li>
+                    <li>goldenRod<span class="text-border-color-box"></span></li>
+                    <li>Gray<span class="text-border-color-box"></span></li>
+                    <li>Grey<span class="text-border-color-box"></span></li>
+                    <li>Green<span class="text-border-color-box"></span></li>
+                    <li>GreenYellow<span class="text-border-color-box"></span></li>
+                    <li>HoneyDew<span class="text-border-color-box"></span></li>
+                    <li>HotPink<span class="text-border-color-box"></span></li>
+                    <li>IndianRed<span class="text-border-color-box"></span></li>
+                    <li>Indigo<span class="text-border-color-box"></span></li>
+                    <li>Ivory<span class="text-border-color-box"></span></li>
+                    <li>Khaki<span class="text-border-color-box"></span></li>
+                    <li>Lavender<span class="text-border-color-box"></span></li>
+                    <li>LavenderBlush<span class="text-border-color-box"></span></li>
+                    <li>LawnGreen<span class="text-border-color-box"></span></li>
+                    <li>LemonChiffon<span class="text-border-color-box"></span></li>
+                    <li>LightBlue<span class="text-border-color-box"></span></li>
+                    <li>LightCoral<span class="text-border-color-box"></span></li>
+                    <li>LightCyan<span class="text-border-color-box"></span></li>
+                    <li>LightGoldenRodYellow<span class="text-border-color-box"></span></li>
+                    <li>LightGray<span class="text-border-color-box"></span></li>
+                    <li>LightGrey<span class="text-border-color-box"></span></li>
+                    <li>LightGreen<span class="text-border-color-box"></span></li>
+                    <li>LightPink<span class="text-border-color-box"></span></li>
+                    <li>LightSalmon<span class="text-border-color-box"></span></li>
+                    <li>LightSeaGreen<span class="text-border-color-box"></span></li>
+                    <li>LightSkyBlue<span class="text-border-color-box"></span></li>
+                    <li>LightSlateGray<span class="text-border-color-box"></span></li>
+                    <li>LightSlateGrey<span class="text-border-color-box"></span></li>
+                    <li>LightSteelBlue<span class="text-border-color-box"></span></li>
+                    <li>LightYellow<span class="text-border-color-box"></span></li>
+                    <li>Lime<span class="text-border-color-box"></span></li>
+                    <li>LimeGreen<span class="text-border-color-box"></span></li>
+                    <li>Linen<span class="text-border-color-box"></span></li>
+                    <li>Magenta<span class="text-border-color-box"></span></li>
+                    <li>Maroon<span class="text-border-color-box"></span></li>
+                    <li>MediumBlue<span class="text-border-color-box"></span></li>
+                    <li>MediumOrchid<span class="text-border-color-box"></span></li>
+                    <li>MediumPurple<span class="text-border-color-box"></span></li>
+                    <li>MediumSeaGreen<span class="text-border-color-box"></span></li>
+                    <li>MediumSlateBlue<span class="text-border-color-box"></span></li>
+                    <li>MediumSpringGreen<span class="text-border-color-box"></span></li>
+                    <li>MediumTurquoise<span class="text-border-color-box"></span></li>
+                    <li>MediumVioletRed<span class="text-border-color-box"></span></li>
+                    <li>MidnightBlue<span class="text-border-color-box"></span></li>
+                    <li>MintCream<span class="text-border-color-box"></span></li>
+                    <li>MistyRose<span class="text-border-color-box"></span></li>
+                    <li>Moccasin<span class="text-border-color-box"></span></li>
+                    <li>NavajoWhite<span class="text-border-color-box"></span></li>
+                    <li>Navy<span class="text-border-color-box"></span></li>
+                    <li>OldLace<span class="text-border-color-box"></span></li>
+                    <li>Olive<span class="text-border-color-box"></span></li>
+                    <li>OliveDrab<span class="text-border-color-box"></span></li>
+                    <li>Orange<span class="text-border-color-box"></span></li>
+                    <li>OrangeRed<span class="text-border-color-box"></span></li>
+                    <li>Orchid<span class="text-border-color-box"></span></li>
+                    <li>PaleGoldenRod<span class="text-border-color-box"></span></li>
+                    <li>PaleGreen<span class="text-border-color-box"></span></li>
+                    <li>PaleTurquoise<span class="text-border-color-box"></span></li>
+                    <li>PaleVioletRed<span class="text-border-color-box"></span></li>
+                    <li>PapayaWhip<span class="text-border-color-box"></span></li>
+                    <li>PeachPuff<span class="text-border-color-box"></span></li>
+                    <li>Peru<span class="text-border-color-box"></span></li>
+                    <li>Pink<span class="text-border-color-box"></span></li>
+                    <li>Plum<span class="text-border-color-box"></span></li>
+                    <li>PowderBlue<span class="text-border-color-box"></span></li>
+                    <li>Purple<span class="text-border-color-box"></span></li>
+                    <li>RebeccaPurple<span class="text-border-color-box"></span></li>
+                    <li>Red<span class="text-border-color-box"></span></li>
+                    <li>RosyBrown<span class="text-border-color-box"></span></li>
+                    <li>RoyalBlue<span class="text-border-color-box"></span></li>
+                    <li>SaddleBrown<span class="text-border-color-box"></span></li>
+                    <li>Salmon<span class="text-border-color-box"></span></li>
+                    <li>SandyBrown<span class="text-border-color-box"></span></li>
+                    <li>SeaGreen<span class="text-border-color-box"></span></li>
+                    <li>SeaShell<span class="text-border-color-box"></span></li>
+                    <li>Sienna<span class="text-border-color-box"></span></li>
+                    <li>Silver<span class="text-border-color-box"></span></li>
+                    <li>SkyBlue<span class="text-border-color-box"></span></li>
+                    <li>SlateBlue<span class="text-border-color-box"></span></li>
+                    <li>SlateGray<span class="text-border-color-box"></span></li>
+                    <li>SlateGrey<span class="text-border-color-box"></span></li>
+                    <li>Snow<span class="text-border-color-box"></span></li>
+                    <li>SpringGreen<span class="text-border-color-box"></span></li>
+                    <li>SteelBlue<span class="text-border-color-box"></span></li>
+                    <li>Tan<span class="text-border-color-box"></span></li>
+                    <li>Teal<span class="text-border-color-box"></span></li>
+                    <li>Tomato<span class="text-border-color-box"></span></li>
+                    <li>Turquoise<span class="text-border-color-box"></span></li>
+                    <li>Violet<span class="text-border-color-box"></span></li>
+                    <li>Wheat<span class="text-border-color-box"></span></li>
+                    <li>White<span class="text-border-color-box"></span></li>
+                    <li>Whitesmoke<span class="text-border-color-box"></span></li>
+                    <li>Yellow<span class="text-border-color-box"></span></li>
+                    <li>YellowGreen<span class="text-border-color-box"></span></li>
+                </ul>
+            </div>
+
+            <button class="btn btn-underline" title="Underline">U</button>
+            <button class="btn btn-italic" title="Italic">I</button>
+            <button class="btn btn-bold" title="Bold">B</button>
+            
+            <button class="btn btn-increase-letter-spacing" title="Increase Letter Spacing">&#8594</button>
+            <button class="btn btn-decrease-letter-spacing" title="Decrease Letter Spacing">&#8592</button>
+            <button class="btn btn-increase-line-height" title="Increase Line Height">&#8593</button>
+            <button class="btn btn-decrease-line-height" title="Decrease Line Height">&#8595</button>
+
+            
+            <div class="text-cases-dd-ctr">
+                <div class="text-cases-btn-ctr">
+                    <button class="text-cases-btn">
+                        Capitalize
+                    </button>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <ul class="text-cases">
+                    <li>Uppercase</li>
+                    <li>Lowercase</li>
+                    <li>Capitalize</li>
+                </ul>
+            </div>
+
+            <!-- Text shadow -->
+            <div class="text-shadow-dd-ctr">
+                <div class="text-shadow-btn-ctr">
+                    <button class="text-shadow-btn">
+                        None
+                    </button>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <ul class="text-shadow">
+                    <li>None</li>
+                    <li>Shadow-1</li>
+                    <li>Shadow-2</li>
+                    <li>Shadow-3</li>
+                    <li>Shadow-4</li>
+                    <li>Shadow-5</li>
+                    <li>Shadow-6</li>
+                    <li>Shadow-7</li>
+                    <li>Shadow-8</li>
+                </ul>
+            </div>
+            <button class="btn btn-clear" title="clear">Reset</button>
+        </div>
+
+        <!-- Text input box -->
+        <section class="main-section">
+            <div class="text-container">
+                <input type="text" class="text-input" value="Please Stylize Me!">
+            </div>
+        
+            <div class="code-container">
+                <div id="code"><p class="code-font">font-family: "Times New Roman", sans-serif;</p><p class="code-font-size">font-size: 50px;</p><p class="code-font-weight">font-weight: 300;</p><p class="code-color">color: Black;</p><p class="code-background-color">background-color: white;</p><p class="code-text-border">text-shadow: none;</p><p class="code-underline">text-decoration: none;</p><p class="code-italic">font-style: none;</p><p class="code-bold">font-weight: normal;</p><p class="code-letter-spacing">letter-spacing: 0;</p><p class="code-line-height">line-height: 1;</p><p class="code-text-case">text-transform: Capitalize;</p><p class="code-text-shadow">text-shadow: none;</p></div>
+        
+                <!-- Copy Code Button -->
+                <button class="copy-code-btn" onclick="copyCode('#code');" title="Copy Code!"><i class="fa-regular fa-copy"></i></button>
+            </div>
+        </section>    
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
