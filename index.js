@@ -1,4 +1,11 @@
 // Select elements 
+const header = document.querySelector('.header');
+const topMenu = document.querySelector('.top-menu');
+const ddCtr = document.querySelectorAll(".dd-ctr");
+const ddBtnCtr = document.querySelectorAll(".dd-btn-ctr");
+const ddInnerBtn = document.querySelectorAll(".dd-inner-btn");
+const ddMenu = document.querySelectorAll(".dd-menu");
+
 const selectFont = document.querySelector('.select-font');
 const selectFontBtnCtr = document.querySelector(".select-font-btn-ctr");
 const selectFontBtn = document.querySelector('.select-font-btn');
@@ -78,7 +85,14 @@ const codeTextShadow = document.querySelector('.code-text-shadow');
 const codeTextCase = document.querySelector('.code-text-case');
 const copyCodeBtn = document.querySelector('.copy-code-btn');
 const btnClear = document.querySelector('.btn-clear');
+const btnChangeMode = document.querySelector('.btn-change-mode');
 const codeFontWeight = document.querySelector('.code-font-weight');
+
+const textColorInputCustom = document.querySelector('#text-color-input-custom');
+const textColorTextCustom = document.querySelector('#text-color-text-custom');
+
+const bgColorInputCustom = document.querySelector('#bg-color-input-custom');
+const bgColorTextCustom = document.querySelector('#bg-color-text-custom');
 
 let i;
 
@@ -100,13 +114,17 @@ const init = function () {
     textInput.style.fontWeight = "300"
     codeFontWeight.textContent = "font-weight: 300;"
 
-    textColorBtnBox.style.backgroundColor = "Black"
-    textInput.style.color = "Black"
-    codeColor.textContent = "color: Black;"
-
-    bgColorBtnBox.style.backgroundColor = "White"
-    textInput.style.backgroundColor = "white"
-    codeBackgroundColor.textContent = "background-color: white;"
+    textColorBtnBox.style.backgroundColor = "#000000"
+    textInput.style.color = "#000000"
+    codeColor.textContent = "color: #000000;"
+    textColorTextCustom.textContent = "#000000";
+    textColorInputCustom.value = "#000000";
+    
+    bgColorBtnBox.style.backgroundColor = "#ffffff"
+    textInput.style.backgroundColor = "#ffffff"
+    codeBackgroundColor.textContent = "background-color: #ffffff;"    
+    bgColorTextCustom.textContent = "#ffffff";
+    bgColorInputCustom.value = "#ffffff";
 
     textBorderColorBtnBox.style.backgroundColor = "transparent"
     textInput.style.textShadow = "none"
@@ -130,8 +148,8 @@ const init = function () {
     textInput.style.letterSpacing = 0
     codeLetterSpacing.textContent = "letter-spacing: " + 0 + ";"
 
-    textInput.style.lineHeight = 0
-    codeLineHeight.textContent = "line-height: " + 0 + ";"
+    textInput.style.lineHeight = 1
+    codeLineHeight.textContent = "line-height: " + 1 + ";"
 
     textInput.style.textTransform = "capitalize"
     codeTextCase.textContent = `text-transform: capitalize;`
@@ -146,6 +164,17 @@ init();
 
 // Clear all formating
 btnClear.addEventListener("click", init)
+
+// Change color mode
+btnChangeMode.addEventListener("click", () => {
+    header.classList.toggle('dark-header');
+    topMenu.classList.toggle('dark-top-menu');
+    for(let i = 0; i < ddCtr.length; i++) {
+        ddBtnCtr[i].classList.toggle('dark-dd-btn-ctr');
+        ddInnerBtn[i].classList.toggle('dark-dd-inner-btn');
+        ddMenu[i].classList.toggle('dark-dd-menu');
+    }
+})
 
 // Font Family / font type / font
 selectFont.classList.add('hidden');
@@ -266,6 +295,13 @@ textColorBtnCtr.addEventListener("click", () => {
     }
 })
 
+textColorInputCustom.addEventListener("change", () => {
+    textInput.style.color = textColorInputCustom.value;
+    textColorTextCustom.textContent = textColorInputCustom.value;
+    textColorBtnBox.style.backgroundColor = textColorInputCustom.value;
+    codeColor.textContent = `color: ${textColorTextCustom.textContent};`;
+})
+
 // Background-color
 bgColor.classList.add('hidden');
 
@@ -294,6 +330,13 @@ bgColorBtnCtr.addEventListener("click", () => {
         bgColorBtnIcon.classList.add('fa-angle-down');
         bgColorBtnIcon.classList.remove('fa-angle-up');
     }
+})
+
+bgColorInputCustom.addEventListener("change", () => {
+    textInput.style.backgroundColor = bgColorInputCustom.value;
+    bgColorTextCustom.textContent = bgColorInputCustom.value;
+    bgColorBtnBox.style.backgroundColor = bgColorInputCustom.value;
+    codeBackgroundColor.textContent = `background-color: ${bgColorTextCustom.textContent};`;
 })
 
 // Text Border
@@ -549,7 +592,7 @@ function copyCode(element) {
     $temp.remove();
 }
 
-// Change title when code is copied
+// Alert when code is copied
 copyCodeBtn.addEventListener("click", () => {
     alert("Code copied successfully!");
 })

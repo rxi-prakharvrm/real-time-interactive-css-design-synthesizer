@@ -13,14 +13,14 @@
         <div class="header">CSS Generator</div>
         <div class="top-menu">
             <!-- Selecting the font family -->
-            <div class="select-font-dd-ctr">
-                <div class="select-font-btn-ctr">
-                    <button class="select-font-btn">
+            <div class="select-font-dd-ctr dd-ctr">
+                <div class="select-font-btn-ctr dd-btn-ctr">
+                    <button class="select-font-btn dd-inner-btn">
                         Poppins
                     </button>
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
-                <ul class="select-font">
+                <ul class="select-font dd-menu">
                     <li>Alef</li>
                     <li>Algerian</li>
                     <li>Arial</li>
@@ -53,14 +53,14 @@
             </div>
 
             <!-- Selecting the font size -->
-            <div class="font-size-dd-ctr">
-                <div class="font-size-btn-ctr">
-                    <button class="font-size-btn">
+            <div class="font-size-dd-ctr dd-ctr">
+                <div class="font-size-btn-ctr dd-btn-ctr">
+                    <button class="font-size-btn dd-inner-btn">
                         Times New Roman
                     </button>
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
-                <ul class="font-size">
+                <ul class="font-size dd-menu">
                     <li>20</li>
                     <li>25</li>
                     <li>30</li>
@@ -86,15 +86,15 @@
             </div>
 
             <!-- Select font weight  -->
-            <div class="font-weight-dd-ctr">
-                <div class="font-weight-btn-ctr">
+            <div class="font-weight-dd-ctr dd-ctr">
+                <div class="font-weight-btn-ctr dd-btn-ctr">
                     <span class="font-weight-btn-box"></span>
-                    <button class="font-weight-btn">
+                    <button class="font-weight-btn dd-inner-btn">
                         300
                     </button>
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
-                <ul class="font-weight">
+                <ul class="font-weight dd-menu">
                     <li>100</li>
                     <li>200</li>
                     <li>300</li>
@@ -109,15 +109,21 @@
 
 
             <!-- Selecting the text color -->
-            <div class="text-color-dd-ctr">
-                <div class="text-color-btn-ctr">
+            <div class="text-color-dd-ctr dd-ctr">
+                <div class="text-color-btn-ctr dd-btn-ctr">
                     <span class="text-color-btn-box"></span>
-                    <button class="text-color-btn">
+                    <button class="text-color-btn dd-inner-btn">
                         Text Color
                     </button>
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
-                <ul class="text-color">
+                <ul class="text-color dd-menu">
+                    <li id="text-color-li-custom">
+                        <label id="text-color-label-custom" for="text-color-input-custom">Custom</label>
+                        <span id="text-color-text-custom">#000000</span>
+                        <input type="color" name="" id="text-color-input-custom">
+                        <span class="text-color-box" id="text-color-box-custom"></span>
+                    </li>
                     <li>Transparent<span class="text-color-box"></span></li>
                     <li>AliceBlue<span class="text-color-box"></span></li>
                     <li>AntiqueWhite<span class="text-color-box"></span></li>
@@ -268,15 +274,21 @@
             </div>
 
             <!-- Selecting the background color -->
-            <div class="bg-color-dd-ctr">
-                <div class="bg-color-btn-ctr">
+            <div class="bg-color-dd-ctr dd-ctr">
+                <div class="bg-color-btn-ctr dd-btn-ctr">
                     <span class="bg-color-btn-box"></span>
-                    <button class="bg-color-btn">
+                    <button class="bg-color-btn dd-inner-btn">
                         Background Color
                     </button>
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
-                <ul class="bg-color">
+                <ul class="bg-color dd-menu">
+                    <li id="bg-color-li-custom">
+                        <label id="bg-color-label-custom" for="bg-color-input-custom">Custom</label>
+                        <span id="bg-color-text-custom">#ffffff</span>
+                        <input type="color" name="" id="bg-color-input-custom">
+                        <span class="bg-color-box" id="bg-color-box-custom"></span>
+                    </li>
                     <li>Transparent<span class="bg-color-box"></span></li>
                     <li>AliceBlue<span class="bg-color-box"></span></li>
                     <li>AntiqueWhite<span class="bg-color-box"></span></li>
@@ -427,15 +439,15 @@
             </div>
 
             <!-- Selecting the text border -->
-            <div class="text-border-color-dd-ctr">
-                <div class="text-border-color-btn-ctr">
+            <div class="text-border-color-dd-ctr dd-ctr">
+                <div class="text-border-color-btn-ctr dd-btn-ctr">
                     <span class="text-border-color-btn-box"></span>
-                    <button class="text-border-color-btn">
+                    <button class="text-border-color-btn dd-inner-btn">
                         Text Border
                     </button>
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
-                <ul class="text-border-color">
+                <ul class="text-border-color dd-menu">
                     <li>None<span class="text-border-color-box"></span></li>
                     <li>AliceBlue<span class="text-border-color-box"></span></li>
                     <li>AntiqueWhite<span class="text-border-color-box"></span></li>
@@ -595,14 +607,14 @@
             <button class="btn btn-decrease-line-height" title="Decrease Line Height">&#8595</button>
 
             
-            <div class="text-cases-dd-ctr">
-                <div class="text-cases-btn-ctr">
-                    <button class="text-cases-btn">
+            <div class="text-cases-dd-ctr dd-ctr">
+                <div class="text-cases-btn-ctr dd-btn-ctr">
+                    <button class="text-cases-btn  dd-inner-btn">
                         Capitalize
                     </button>
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
-                <ul class="text-cases">
+                <ul class="text-cases dd-menu">
                     <li>Uppercase</li>
                     <li>Lowercase</li>
                     <li>Capitalize</li>
@@ -610,14 +622,14 @@
             </div>
 
             <!-- Text shadow -->
-            <div class="text-shadow-dd-ctr">
-                <div class="text-shadow-btn-ctr">
-                    <button class="text-shadow-btn">
+            <div class="text-shadow-dd-ctr dd-ctr">
+                <div class="text-shadow-btn-ctr dd-btn-ctr">
+                    <button class="text-shadow-btn dd-inner-btn">
                         None
                     </button>
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
-                <ul class="text-shadow">
+                <ul class="text-shadow dd-menu">
                     <li>None</li>
                     <li>Shadow-1</li>
                     <li>Shadow-2</li>
@@ -630,6 +642,7 @@
                 </ul>
             </div>
             <button class="btn btn-clear" title="clear">Reset</button>
+            <button class="btn btn-change-mode light-mode">Mode</button>
         </div>
 
         <!-- Text input box -->

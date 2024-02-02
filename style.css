@@ -47,6 +47,11 @@ body {
   color: #000000;
 }
 
+.dark-header {
+  background-color: #151515;
+  color: #fff;
+}
+
 /* Styling of top menu  */
 .top-menu {
   width: 100%;
@@ -63,25 +68,22 @@ body {
   z-index: 2;
 }
 
-.select-font-dd-ctr,
-.font-size-dd-ctr,
-.font-weight-dd-ctr,
-.text-color-dd-ctr,
-.bg-color-dd-ctr,
-.text-border-color-dd-ctr,
-.text-cases-dd-ctr,
-.text-shadow-dd-ctr {
+.dark-top-menu {
+  background-color: #262626;
+  border-bottom: 1px solid #1e1e1e;
+  box-shadow: 0 0.5rem 1rem -0.6rem #232323;
+}
+
+.dd-ctr {
   position: relative;
 }
 
-.select-font-btn-ctr,
-.font-size-btn-ctr,
-.font-weight-btn-ctr,
-.text-color-btn-ctr,
-.bg-color-btn-ctr,
-.text-border-color-btn-ctr,
-.text-cases-btn-ctr,
-.text-shadow-btn-ctr {
+/* .dark-dd-ctr {
+  background-color: #1e1e1e;
+  color: #fff;
+} */
+
+.dd-btn-ctr {
   width: 20rem;
   margin: 0.2rem;
   padding: 0.5rem 1.2rem;
@@ -95,6 +97,11 @@ body {
   cursor: pointer;
 }
 
+.dark-dd-btn-ctr {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
 .font-size-btn-ctr,
 .font-weight-btn-ctr {
   width: 8rem;
@@ -105,14 +112,7 @@ body {
   width: 12rem;
 }
 
-.select-font-btn,
-.font-size-btn,
-.font-weight-btn,
-.text-color-btn,
-.bg-color-btn,
-.text-border-color-btn,
-.text-cases-btn,
-.text-shadow-btn {
+.dd-inner-btn {
   width: 80%;
   outline: none;
   border: none;
@@ -122,14 +122,12 @@ body {
   cursor: pointer;
 }
 
-.select-font,
-.font-size,
-.font-weight,
-.text-color,
-.bg-color,
-.text-border-color,
-.text-cases,
-.text-shadow {
+.dark-dd-inner-btn {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+.dd-menu {
   position: absolute;
   top: 2.8rem;
   left: 0;
@@ -138,9 +136,15 @@ body {
   background-color: #fff;
   box-shadow: 2px 2px 10px 2px #dedede;
   height: auto;
-  max-height: 35.5rem;
+  max-height: 35rem;
   width: 20rem;
   overflow-y: auto;
+}
+
+.dark-dd-menu {
+  box-shadow: 2px 2px 10px 2px #383838;
+  background-color: #1e1e1e;
+  color: #fff;
 }
 
 /* z-index in top-menu */
@@ -188,14 +192,7 @@ body {
   width: 12rem;
 }
 
-.select-font li,
-.font-size li,
-.font-weight li,
-.text-color li,
-.bg-color li,
-.text-border-color li,
-.text-cases li,
-.text-shadow li {
+.dd-menu li {
   padding: 0.2rem 1.2rem;
   font-size: 1.5rem;
   cursor: pointer;
@@ -205,14 +202,7 @@ body {
   align-items: center;
 }
 
-.select-font li:hover,
-.font-size li:hover,
-.font-weight li:hover,
-.text-color li:hover,
-.bg-color li:hover,
-.text-border-color li:hover,
-.text-cases li:hover
-.text-shadow li:hover {
+.dd-menu li:hover {
   background-color: #f1f1f1;
 }
 
@@ -223,6 +213,31 @@ body {
   width: 12px;
   background-color: #000;
   border: 1px solid #888;
+}
+
+#text-color-li-custom,
+#bg-color-li-custom {
+  border-bottom: 1px solid #aaa;
+  padding: 10px;
+  margin-bottom: 5px;
+  display: flex;
+}
+
+#text-color-text-custom,
+#bg-color-text-custom {
+  font-size: 1.2rem;
+  padding: 0 1rem;
+}
+
+#text-color-box-custom,
+#bg-color-box-custom {
+  display: none;
+}
+
+#text-color-label-custom,
+#bg-color-label-custom {
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 .text-color-btn-box,
