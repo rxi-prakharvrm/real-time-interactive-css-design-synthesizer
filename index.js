@@ -590,15 +590,11 @@ textShadowBtnCtr.addEventListener("click", () => {
 
 
 // Copy generated code
-function copyCode(element) {
+copyCodeBtn.addEventListener("click", (element) => {
     var $temp = $("<input>");
     $("body").append($temp);
     $temp.val($(element).text()).select();
     document.execCommand("copy");
     $temp.remove();
-}
-
-// Alert when code is copied
-copyCodeBtn.addEventListener("click", () => {
     alert("Code copied successfully!");
 })
