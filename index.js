@@ -94,7 +94,7 @@ const textColorTextCustom = document.querySelector('#text-color-text-custom');
 const bgColorInputCustom = document.querySelector('#bg-color-input-custom');
 const bgColorTextCustom = document.querySelector('#bg-color-text-custom');
 
-let i;
+const btn = document.querySelectorAll('.btn');
 
 // Initial state of the css generator app (clear btn functionality)
 const init = function () {
@@ -115,13 +115,13 @@ const init = function () {
     codeFontWeight.textContent = "font-weight: 300;"
 
     textColorBtnBox.style.backgroundColor = "#000000"
-    textInput.style.color = "#000000"
+    textInput.style.color = "#222"
     codeColor.textContent = "color: #000000;"
     textColorTextCustom.textContent = "#000000";
     textColorInputCustom.value = "#000000";
     
     bgColorBtnBox.style.backgroundColor = "#ffffff"
-    textInput.style.backgroundColor = "#ffffff"
+    textInput.style.backgroundColor = "transparent"
     codeBackgroundColor.textContent = "background-color: #ffffff;"    
     bgColorTextCustom.textContent = "#ffffff";
     bgColorInputCustom.value = "#ffffff";
@@ -167,12 +167,18 @@ btnClear.addEventListener("click", init)
 
 // Change color mode
 btnChangeMode.addEventListener("click", () => {
+    document.body.classList.toggle('dark-body');
     header.classList.toggle('dark-header');
     topMenu.classList.toggle('dark-top-menu');
+    textInput.classList.toggle('dark-text-input');
+    codeContainer.classList.toggle('dark-code-ctr');
     for(let i = 0; i < ddCtr.length; i++) {
         ddBtnCtr[i].classList.toggle('dark-dd-btn-ctr');
         ddInnerBtn[i].classList.toggle('dark-dd-inner-btn');
         ddMenu[i].classList.toggle('dark-dd-menu');
+    }
+    for(let i = 0; i < btn.length; i++) {
+        btn[i].classList.toggle('dark-btn');
     }
 })
 
