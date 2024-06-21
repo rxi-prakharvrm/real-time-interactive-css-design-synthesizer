@@ -599,13 +599,13 @@ textShadowBtnCtr.addEventListener("click", () => {
 //     alert("Code copied successfully!");
 // })
 
-copyCodeBtn.addEventListener("click", function() {
-    var textToCopy = document.getElementById("code").innerHTML;
-    var tempInput = document.createElement("input");
-    document.body.appendChild(tempInput);
-    tempInput.value = textToCopy;
-    tempInput.select();
-    document.execCommand("copy");
-    document.body.removeChild(tempInput);
-    alert("Code copied successfully!");
-});
+// copyCodeBtn.addEventListener("click", function() {
+//     var textToCopy = document.getElementById("code").innerHTML;
+//     var tempInput = document.createElement("input");
+//     document.body.appendChild(tempInput);
+//     tempInput.value = textToCopy;
+//     tempInput.select();
+//     document.execCommand("copy");
+//     document.body.removeChild(tempInput);
+//     alert("Code copied successfully!");
+// });
