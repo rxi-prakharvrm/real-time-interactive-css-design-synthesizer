@@ -590,11 +590,22 @@ textShadowBtnCtr.addEventListener("click", () => {
 
 
 // Copy generated code
-copyCodeBtn.addEventListener("click", (element) => {
-    var $temp = $("<input>");
-    $("body").append($temp);
-    $temp.val($(element).text()).select();
+// copyCodeBtn.addEventListener("click", (element) => {
+//     var $temp = $("<input>");
+//     $("body").append($temp);
+//     $temp.val($(element).text()).select();
+//     document.execCommand("copy");
+//     $temp.remove();
+//     alert("Code copied successfully!");
+// })
+
+copyCodeBtn.addEventListener("click", function() {
+    var textToCopy = document.getElementById("code").innerHTML;
+    var tempInput = document.createElement("input");
+    document.body.appendChild(tempInput);
+    tempInput.value = textToCopy;
+    tempInput.select();
     document.execCommand("copy");
-    $temp.remove();
+    document.body.removeChild(tempInput);
     alert("Code copied successfully!");
-})
+});
