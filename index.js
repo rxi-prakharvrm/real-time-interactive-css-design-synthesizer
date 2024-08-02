@@ -600,7 +600,7 @@ textShadowBtnCtr.addEventListener("click", () => {
 // })
 
 copyCodeBtn.addEventListener("click", function() {
-    var textToCopy = document.getElementById("code").innerHTML;
+    var textToCopy = document.getElementById("code").textContent;
     var tempInput = document.createElement("input");
     document.body.appendChild(tempInput);
     tempInput.value = textToCopy;
