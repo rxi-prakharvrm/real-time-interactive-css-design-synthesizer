@@ -1,17 +1,6 @@
 /* Font family cdn  */
 @import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Flamenco:wght@300;400&family=KoHo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-/* Media queries  */
-@media screen and (min-width: 100rem) {
-  .code-container {
-    width: 80%;
-  }
-
-  .text-input {
-    width: 80%;
-  }
-}
-
 /* Set default behavious of the elements */
 *,
 *::after,
@@ -395,4 +384,44 @@ body {
 .active {
   background-color: #4345ca;
   color: #fff;
+}
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+  .top-menu {
+    justify-content: space-evenly;
+  }
+
+  .menu-btn-ctr {
+    width: 100%;
+  }
+
+  .function-btn-ctr {
+    flex-direction: row;
+  }
+  
+  .code-container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .text-input {
+    font-size: 3.2rem !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .dd-inner-btn {
+    font-size: 1.2rem;
+  }
+
+  .text-input {
+    font-size: 2.6rem !important;
+  }
+  
+  .code-container {
+    font-size: 1.4rem;
+    line-height: 1.6;
+  }
 }
