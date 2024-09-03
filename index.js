@@ -115,7 +115,7 @@ const init = function () {
     codeFontWeight.textContent = "font-weight: 300;"
 
     textColorBtnBox.style.backgroundColor = "#000000"
-    textInput.style.color = "#222"
+    textInput.style.color = "#555"
     codeColor.textContent = "color: #000000;"
     textColorTextCustom.textContent = "#000000";
     textColorInputCustom.value = "#000000";
@@ -172,6 +172,7 @@ btnChangeMode.addEventListener("click", () => {
     topMenu.classList.toggle('dark-top-menu');
     textInput.classList.toggle('dark-text-input');
     codeContainer.classList.toggle('dark-code-ctr');
+    copyCodeBtn.src = "images/copy-light.png";
     for(let i = 0; i < ddCtr.length; i++) {
         ddBtnCtr[i].classList.toggle('dark-dd-btn-ctr');
         ddInnerBtn[i].classList.toggle('dark-dd-inner-btn');
@@ -280,6 +281,11 @@ for (let i = 0; i < textColorLi.length; i++) {
         textColorBtnBox.style.backgroundColor = `${e.target.textContent.toLowerCase()}`;
     })
 
+    textColorInputCustom.addEventListener("input", (e) => {
+        textInput.style.color = `${e.target.value}`;
+        textColorBtnBox.style.backgroundColor = `${e.target.value}`;
+    })
+
     textColorLi[i].addEventListener("click", () => {
         textColor.classList.toggle('hidden');
         codeColor.textContent = `color: ${textColorLi[i].textContent.toLowerCase()};`;
@@ -315,6 +321,11 @@ for (let i = 0; i < bgColorLi.length; i++) {
     bgColorLi[i].addEventListener("mouseover", (e) => {
         textInput.style.backgroundColor = `${e.target.textContent.toLowerCase()}`;
         bgColorBtnBox.style.backgroundColor = `${e.target.textContent.toLowerCase()}`;
+    })
+
+    bgColorInputCustom.addEventListener("input", (e) => {
+        textInput.style.backgroundColor = `${e.target.value}`;
+        bgColorBtnBox.style.backgroundColor = `${e.target.value}`;
     })
 
     bgColorLi[i].addEventListener("click", () => {
