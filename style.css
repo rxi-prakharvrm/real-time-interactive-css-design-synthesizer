@@ -54,7 +54,7 @@ body {
 
 .dark-header {
   background-color: #151515;
-  color: #fff;
+  color: #888;
 }
 
 /* Styling of top menu  */
@@ -243,6 +243,9 @@ body {
   padding: 10px;
   margin-bottom: 5px;
   display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #text-color-text-custom,
