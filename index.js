@@ -284,6 +284,7 @@ for (let i = 0; i < textColorLi.length; i++) {
     textColorInputCustom.addEventListener("input", (e) => {
         textInput.style.color = `${e.target.value}`;
         textColorBtnBox.style.backgroundColor = `${e.target.value}`;
+        textColorTextCustom.textContent = `${e.target.value}`;
     })
 
     textColorLi[i].addEventListener("click", () => {
@@ -326,6 +327,7 @@ for (let i = 0; i < bgColorLi.length; i++) {
     bgColorInputCustom.addEventListener("input", (e) => {
         textInput.style.backgroundColor = `${e.target.value}`;
         bgColorBtnBox.style.backgroundColor = `${e.target.value}`;
+        bgColorTextCustom.textContent = e.target.value;
     })
 
     bgColorLi[i].addEventListener("click", () => {

@@ -217,6 +217,10 @@ body {
   background-color: #f1f1f1;
 }
 
+#text-color-input-custom, #bg-color-input-custom {
+  width: 3rem;
+}
+
 .text-color-box,
 .bg-color-box,
 .text-border-color-box {
