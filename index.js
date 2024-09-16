@@ -7,6 +7,7 @@ const ddInnerBtn = document.querySelectorAll(".dd-inner-btn");
 const ddMenu = document.querySelectorAll(".dd-menu");
 
 const selectFont = document.querySelector('.select-font');
+const selectFontDDCtr = document.querySelector('.select-font-dd-ctr');
 const selectFontBtnCtr = document.querySelector(".select-font-btn-ctr");
 const selectFontBtn = document.querySelector('.select-font-btn');
 const selectFontBtnIcon = document.querySelector('.select-font-btn-ctr i');
@@ -39,14 +40,6 @@ const bgColorBtnIcon = document.querySelector('.bg-color-btn-ctr i');
 const bgColorLi = document.querySelectorAll('.bg-color li');
 const bgColorBox = document.querySelectorAll('.bg-color-box');
 const bgColorBtnBox = document.querySelector('.bg-color-btn-box');
-
-const textBorderColor = document.querySelector('.text-border-color');
-const textBorderColorBtn = document.querySelector('.text-border-color-btn');
-const textBorderColorBtnCtr = document.querySelector(".text-border-color-btn-ctr");
-const textBorderColorBtnIcon = document.querySelector('.text-border-color-btn-ctr i');
-const textBorderColorLi = document.querySelectorAll('.text-border-color li');
-const textBorderColorBox = document.querySelectorAll('.text-border-color-box');
-const textBorderColorBtnBox = document.querySelector('.text-border-color-btn-box');
 
 const btnUnderline = document.querySelector('.btn-underline');
 const btnItalic = document.querySelector('.btn-italic');
@@ -126,12 +119,7 @@ const init = function () {
     bgColorTextCustom.textContent = "#ffffff";
     bgColorInputCustom.value = "#ffffff";
 
-    textBorderColorBtnBox.style.backgroundColor = "transparent"
     textInput.style.textShadow = "none"
-    codeTextBorder.textContent = "none"
-
-    textInput.style.textShadow = "none"
-    codeTextBorder.textContent = "text-shadow: none;"
 
     textInput.classList.remove("underline-text")
     btnUnderline.classList.remove("active")
@@ -173,13 +161,52 @@ btnChangeMode.addEventListener("click", () => {
     textInput.classList.toggle('dark-text-input');
     codeContainer.classList.toggle('dark-code-ctr');
     copyCodeBtn.src = "images/copy-light.png";
+
     for(let i = 0; i < ddCtr.length; i++) {
         ddBtnCtr[i].classList.toggle('dark-dd-btn-ctr');
         ddInnerBtn[i].classList.toggle('dark-dd-inner-btn');
         ddMenu[i].classList.toggle('dark-dd-menu');
     }
+
     for(let i = 0; i < btn.length; i++) {
         btn[i].classList.toggle('dark-btn');
+    }
+})
+
+// hide all the dropdowns on clicking outside
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dd-ctr')) {
+        for (let i = 0; i < ddMenu.length; i++) {
+            ddMenu[i].classList.add('hidden');
+        }
+    }
+
+    if (!e.target.closest('.select-font-dd-ctr')) {
+        selectFont.classList.add('hidden');
+    }
+
+    if (!e.target.closest('.font-size-btn-ctr')) {
+        fontSize.classList.add('hidden');
+    }
+
+    if (!e.target.closest('.font-weight-btn-ctr')) {
+        fontWeight.classList.add('hidden');
+    }
+
+    if (!e.target.closest('.text-color-btn-ctr')) {
+        textColor.classList.add('hidden');
+    }
+
+    if (!e.target.closest('.bg-color-btn-ctr')) {
+        bgColor.classList.add('hidden');
+    }
+
+    if (!e.target.closest('.text-cases-btn-ctr')) {
+        textCases.classList.add('hidden');
+    }
+
+    if (!e.target.closest('.text-shadow-btn-ctr')) {
+        textShadow.classList.add('hidden');
     }
 })
 
@@ -202,13 +229,8 @@ for (let i = 0; i < selectFontLi.length; i++) {
 
 selectFontBtnCtr.addEventListener("click", () => {
     selectFont.classList.toggle('hidden');
-    if(selectFontBtnIcon.classList.contains('fa-angle-down')) {
-        selectFontBtnIcon.classList.remove('fa-angle-down');
-        selectFontBtnIcon.classList.add('fa-angle-up');
-    } else {
-        selectFontBtnIcon.classList.add('fa-angle-down');
-        selectFontBtnIcon.classList.remove('fa-angle-up');
-    }
+    selectFontBtnIcon.classList.toggle('fa-angle-down');
+    selectFontBtnIcon.classList.toggle('fa-angle-up');
 })
 
 // Font Size
@@ -230,13 +252,8 @@ for (let i = 0; i < fontSizeLi.length; i++) {
 
 fontSizeBtnCtr.addEventListener("click", () => {
     fontSize.classList.toggle('hidden');
-    if(fontSizeBtnIcon.classList.contains('fa-angle-down')) {
-        fontSizeBtnIcon.classList.remove('fa-angle-down');
-        fontSizeBtnIcon.classList.add('fa-angle-up');
-    } else {
-        fontSizeBtnIcon.classList.add('fa-angle-down');
-        fontSizeBtnIcon.classList.remove('fa-angle-up');
-    }
+    fontSizeBtnIcon.classList.toggle('fa-angle-down');
+    fontSizeBtnIcon.classList.toggle('fa-angle-up');
 })
 
 // Font Weight
@@ -262,13 +279,8 @@ for (let i = 0; i < fontWeightLi.length; i++) {
 
 fontWeightBtnCtr.addEventListener("click", () => {
     fontWeight.classList.toggle('hidden');
-    if(fontWeightBtnIcon.classList.contains('fa-angle-down')) {
-        fontWeightBtnIcon.classList.remove('fa-angle-down');
-        fontWeightBtnIcon.classList.add('fa-angle-up');
-    } else {
-        fontWeightBtnIcon.classList.add('fa-angle-down');
-        fontWeightBtnIcon.classList.remove('fa-angle-up');
-    }
+    fontWeightBtnIcon.classList.toggle('fa-angle-down');
+    fontWeightBtnIcon.classList.toggle('fa-angle-up');
 })
 
 
@@ -276,7 +288,10 @@ fontWeightBtnCtr.addEventListener("click", () => {
 textColor.classList.add('hidden');
 
 for (let i = 0; i < textColorLi.length; i++) {
+    textColorBox[i].style.backgroundColor = `${textColorLi[i].textContent.toLowerCase()}`;
+
     textColorLi[i].addEventListener("mouseover", (e) => {
+        console.log(e.target.textContent.toLowerCase());
         textInput.style.color = `${e.target.textContent.toLowerCase()}`;
         textColorBtnBox.style.backgroundColor = `${e.target.textContent.toLowerCase()}`;
     })
@@ -293,19 +308,12 @@ for (let i = 0; i < textColorLi.length; i++) {
         textColorBtnIcon.classList.toggle('fa-angle-down');
         textColorBtnIcon.classList.toggle('fa-angle-up');
     })
-
-    textColorBox[i].style.backgroundColor = `${textColorLi[i].textContent.toLowerCase()}`;
 }
 
 textColorBtnCtr.addEventListener("click", () => {
     textColor.classList.toggle('hidden');
-    if(textColorBtnIcon.classList.contains('fa-angle-down')) {
-        textColorBtnIcon.classList.remove('fa-angle-down');
-        textColorBtnIcon.classList.add('fa-angle-up');
-    } else {
-        textColorBtnIcon.classList.add('fa-angle-down');
-        textColorBtnIcon.classList.remove('fa-angle-up');
-    }
+    textColorBtnIcon.classList.toggle('fa-angle-down');
+    textColorBtnIcon.classList.toggle('fa-angle-up');
 })
 
 textColorInputCustom.addEventListener("change", () => {
@@ -319,6 +327,8 @@ textColorInputCustom.addEventListener("change", () => {
 bgColor.classList.add('hidden');
 
 for (let i = 0; i < bgColorLi.length; i++) {
+    bgColorBox[i].style.backgroundColor = `${bgColorLi[i].textContent.toLowerCase()}`;
+
     bgColorLi[i].addEventListener("mouseover", (e) => {
         textInput.style.backgroundColor = `${e.target.textContent.toLowerCase()}`;
         bgColorBtnBox.style.backgroundColor = `${e.target.textContent.toLowerCase()}`;
@@ -336,19 +346,12 @@ for (let i = 0; i < bgColorLi.length; i++) {
         bgColorBtnIcon.classList.toggle('fa-angle-down');
         bgColorBtnIcon.classList.toggle('fa-angle-up');
     })
-
-    bgColorBox[i].style.backgroundColor = `${bgColorLi[i].textContent.toLowerCase()}`;
 }
 
 bgColorBtnCtr.addEventListener("click", () => {
     bgColor.classList.toggle('hidden');
-    if(bgColorBtnIcon.classList.contains('fa-angle-down')) {
-        bgColorBtnIcon.classList.remove('fa-angle-down');
-        bgColorBtnIcon.classList.add('fa-angle-up');
-    } else {
-        bgColorBtnIcon.classList.add('fa-angle-down');
-        bgColorBtnIcon.classList.remove('fa-angle-up');
-    }
+    bgColorBtnIcon.classList.toggle('fa-angle-down');
+    bgColorBtnIcon.classList.toggle('fa-angle-up');
 })
 
 bgColorInputCustom.addEventListener("change", () => {
@@ -356,38 +359,6 @@ bgColorInputCustom.addEventListener("change", () => {
     bgColorTextCustom.textContent = bgColorInputCustom.value;
     bgColorBtnBox.style.backgroundColor = bgColorInputCustom.value;
     codeBackgroundColor.textContent = `background-color: ${bgColorTextCustom.textContent};`;
-})
-
-// Text Border
-textBorderColor.classList.add('hidden');
-
-for (let i = 0; i < textBorderColorLi.length; i++) {
-    textBorderColorLi[i].addEventListener("mouseover", (e) => {
-        let clr = textBorderColorLi[i].textContent.toLowerCase();
-        textInput.style.textShadow = "1px 1px 0 " + clr + ", -1px -1px 0 " + clr + ", 1px -1px 0 " + clr + ", -1px 1px 0 " + clr;
-        codeTextBorder.textContent = "text-shadow: " + "1px 1px 0 " + clr + ", -1px -1px 0 " + clr + ", 1px -1px 0 " + clr + ", -1px 1px 0 " + clr + ";"
-        textBorderColorBtnBox.style.backgroundColor = `${textBorderColorLi[i].textContent.toLowerCase()}`;
-    })
-
-    textBorderColorLi[i].addEventListener("click", () => {
-        textBorderColor.classList.toggle('hidden');
-        textBorderColorBtnIcon.classList.toggle('fa-angle-up');
-        textBorderColorBtnIcon.classList.toggle('fa-angle-down');
-        codeTextBorder.textContent = "1px 1px 0 " + clr + ", -1px -1px 0 " + clr + ", 1px -1px 0 " + clr + ", -1px 1px 0 " + clr;
-    })
-
-    textBorderColorBox[i].style.backgroundColor = `${textBorderColorLi[i].textContent.toLowerCase()}`;
-}
-
-textBorderColorBtnCtr.addEventListener("click", () => {
-    textBorderColor.classList.toggle('hidden');
-    if(textBorderColorBtnIcon.classList.contains('fa-angle-down')) {
-        textBorderColorBtnIcon.classList.remove('fa-angle-down');
-        textBorderColorBtnIcon.classList.add('fa-angle-up');
-    } else {
-        textBorderColorBtnIcon.classList.add('fa-angle-down');
-        textBorderColorBtnIcon.classList.remove('fa-angle-up');
-    }
 })
 
 // Button Underline
@@ -488,129 +459,47 @@ for (let i = 0; i < textCasesLi.length; i++) {
 
 textCasesBtnCtr.addEventListener("click", () => {
     textCases.classList.toggle('hidden');
-    if(textCasesBtnIcon.classList.contains('fa-angle-down')) {
-        textCasesBtnIcon.classList.remove('fa-angle-down');
-        textCasesBtnIcon.classList.add('fa-angle-up');
-    } else {
-        textCasesBtnIcon.classList.add('fa-angle-down');
-        textCasesBtnIcon.classList.remove('fa-angle-up');
-    }
+    textCasesBtnIcon.classList.toggle('fa-angle-down');
+    textCasesBtnIcon.classList.toggle('fa-angle-up');
 })
 
 // Text shadow
 textShadow.classList.toggle("hidden");
+const shadows = [
+    'none',
+    '1px 3px 2px rgba(150, 150, 150, 0.8)',
+    '4px 2px 5px rgba(150, 150, 150, 0.6)',
+    '2px 5px 3px rgba(150, 150, 150, 0.7)',
+    '3px 1px 4px rgba(150, 150, 150, 0.5)',
+    '6px 4px 2px rgba(150, 150, 150, 0.9)',
+    '2px 7px 6px rgba(150, 150, 150, 0.4)',
+    '5px 3px 4px rgba(150, 150, 150, 0.75)',
+    '8px 1px 3px rgba(150, 150, 150, 0.65)',
+    '3px 6px 5px rgba(150, 150, 150, 0.55)',
+    '7px 2px 4px rgba(150, 150, 150, 0.85)'
+  ];
 
 for(let i = 0; i < textShadowLi.length; i++) {
     textShadowLi[i].addEventListener("mouseover", (e) => {
         textShadowBtn.textContent = `${e.target.textContent}`;
-        
-        let shadowText = textInput.style.textShadow;
-        if (e.target.textContent === "None") {
-            shadowText = "none"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-1") {
-            shadowText = "2px 2px 5px gray"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-2") {
-            shadowText = "4px 4px 10px gray"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-3") {
-            shadowText = "0 4px 10px gray"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-4") {
-            shadowText = "4px 4px 2px rgba(150, 150, 150, 1)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-5") {
-            shadowText = "6px 3px 5px rgba(150, 150, 150, 1)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-6") {
-            shadowText = "2px 1px 13px rgba(150, 150, 150, 1)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-7") {
-            shadowText = "8px 5px 5px rgba(150, 150, 150, 0.7)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (textShadow.textContent === "Shadow-8") {
-            shadowText = "-5px -3px 3px rgba(150, 150, 150, 0.7)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        }
+        textInput.style.textShadow = `${shadows[i]}`;
+        codeTextShadow.textContent = `text-shadow: ${shadows[i]};`;
     })
 
     textShadowLi[i].addEventListener("click", (e) => {
         textShadow.classList.toggle('hidden');
         textShadowBtnIcon.classList.toggle('fa-angle-up');
-        textShadowBtnIcon.classList.toggle('fa-angle-down');
-
-        let shadowText = textInput.style.textShadow;
-        if (e.target.textContent === "None") {
-            shadowText = "none"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-1") {
-            shadowText = "2px 2px 5px gray"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-2") {
-            shadowText = "4px 4px 10px gray"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-3") {
-            shadowText = "0 4px 10px gray"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-4") {
-            shadowText = "4px 4px 2px rgba(150, 150, 150, 1)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-5") {
-            shadowText = "6px 3px 5px rgba(150, 150, 150, 1)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-6") {
-            shadowText = "2px 1px 13px rgba(150, 150, 150, 1)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-7") {
-            shadowText = "8px 5px 5px rgba(150, 150, 150, 0.7)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (textShadow.textContent === "Shadow-8") {
-            shadowText = "-5px -3px 3px rgba(150, 150, 150, 0.7)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        }
+        textShadowBtnIcon.classList.toggle('fa-angle-down');        
+        textInput.style.textShadow = `${shadows[i]}`;
+        codeTextShadow.textContent = `text-shadow: ${shadows[i]};`;
     })
 }
 
 textShadowBtnCtr.addEventListener("click", () => {
     textShadow.classList.toggle('hidden');
-    if(textShadowBtnIcon.classList.contains('fa-angle-down')) {
-        textShadowBtnIcon.classList.remove('fa-angle-down');
-        textShadowBtnIcon.classList.add('fa-angle-up');
-    } else {
-        textShadowBtnIcon.classList.add('fa-angle-down');
-        textShadowBtnIcon.classList.remove('fa-angle-up');
-    }
+    textShadowBtnIcon.classList.toggle('fa-angle-down');
+    textShadowBtnIcon.classList.toggle('fa-angle-up');
 })
-
-
-// Copy generated code
-// copyCodeBtn.addEventListener("click", (element) => {
-//     var $temp = $("<input>");
-//     $("body").append($temp);
-//     $temp.val($(element).text()).select();
-//     document.execCommand("copy");
-//     $temp.remove();
-//     alert("Code copied successfully!");
-// })
 
 copyCodeBtn.addEventListener("click", function() {
     var textToCopy = document.getElementById("code").textContent;
