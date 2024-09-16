@@ -68,7 +68,6 @@ const codeFont = document.querySelector('.code-font');
 const codeFontSize = document.querySelector('.code-font-size');
 const codeColor = document.querySelector('.code-color');
 const codeBackgroundColor = document.querySelector('.code-background-color');
-const codeTextBorder = document.querySelector('.code-text-border');
 const codeUnderline = document.querySelector('.code-underline');
 const codeItalic = document.querySelector('.code-italic');
 const codeBold = document.querySelector('.code-bold');
