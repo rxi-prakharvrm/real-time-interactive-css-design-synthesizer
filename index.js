@@ -327,6 +327,8 @@ textColorInputCustom.addEventListener("change", () => {
 bgColor.classList.add('hidden');
 
 for (let i = 0; i < bgColorLi.length; i++) {
+    bgColorBox[i].style.backgroundColor = `${bgColorLi[i].textContent.toLowerCase()}`;
+
     bgColorLi[i].addEventListener("mouseover", (e) => {
         textInput.style.backgroundColor = `${e.target.textContent.toLowerCase()}`;
         bgColorBtnBox.style.backgroundColor = `${e.target.textContent.toLowerCase()}`;
@@ -344,8 +346,6 @@ for (let i = 0; i < bgColorLi.length; i++) {
         bgColorBtnIcon.classList.toggle('fa-angle-down');
         bgColorBtnIcon.classList.toggle('fa-angle-up');
     })
-
-    bgColorBox[i].style.backgroundColor = `${bgColorLi[i].textContent.toLowerCase()}`;
 }
 
 bgColorBtnCtr.addEventListener("click", () => {
