@@ -229,13 +229,8 @@ for (let i = 0; i < selectFontLi.length; i++) {
 
 selectFontBtnCtr.addEventListener("click", () => {
     selectFont.classList.toggle('hidden');
-    if(selectFontBtnIcon.classList.contains('fa-angle-down')) {
-        selectFontBtnIcon.classList.remove('fa-angle-down');
-        selectFontBtnIcon.classList.add('fa-angle-up');
-    } else {
-        selectFontBtnIcon.classList.add('fa-angle-down');
-        selectFontBtnIcon.classList.remove('fa-angle-up');
-    }
+    selectFontBtnIcon.classList.toggle('fa-angle-down');
+    selectFontBtnIcon.classList.toggle('fa-angle-up');
 })
 
 // Font Size
@@ -257,13 +252,8 @@ for (let i = 0; i < fontSizeLi.length; i++) {
 
 fontSizeBtnCtr.addEventListener("click", () => {
     fontSize.classList.toggle('hidden');
-    if(fontSizeBtnIcon.classList.contains('fa-angle-down')) {
-        fontSizeBtnIcon.classList.remove('fa-angle-down');
-        fontSizeBtnIcon.classList.add('fa-angle-up');
-    } else {
-        fontSizeBtnIcon.classList.add('fa-angle-down');
-        fontSizeBtnIcon.classList.remove('fa-angle-up');
-    }
+    fontSizeBtnIcon.classList.toggle('fa-angle-down');
+    fontSizeBtnIcon.classList.toggle('fa-angle-up');
 })
 
 // Font Weight
@@ -289,13 +279,8 @@ for (let i = 0; i < fontWeightLi.length; i++) {
 
 fontWeightBtnCtr.addEventListener("click", () => {
     fontWeight.classList.toggle('hidden');
-    if(fontWeightBtnIcon.classList.contains('fa-angle-down')) {
-        fontWeightBtnIcon.classList.remove('fa-angle-down');
-        fontWeightBtnIcon.classList.add('fa-angle-up');
-    } else {
-        fontWeightBtnIcon.classList.add('fa-angle-down');
-        fontWeightBtnIcon.classList.remove('fa-angle-up');
-    }
+    fontWeightBtnIcon.classList.toggle('fa-angle-down');
+    fontWeightBtnIcon.classList.toggle('fa-angle-up');
 })
 
 
@@ -303,7 +288,10 @@ fontWeightBtnCtr.addEventListener("click", () => {
 textColor.classList.add('hidden');
 
 for (let i = 0; i < textColorLi.length; i++) {
+    textColorBox[i].style.backgroundColor = `${textColorLi[i].textContent.toLowerCase()}`;
+
     textColorLi[i].addEventListener("mouseover", (e) => {
+        console.log(e.target.textContent.toLowerCase());
         textInput.style.color = `${e.target.textContent.toLowerCase()}`;
         textColorBtnBox.style.backgroundColor = `${e.target.textContent.toLowerCase()}`;
     })
@@ -320,19 +308,12 @@ for (let i = 0; i < textColorLi.length; i++) {
         textColorBtnIcon.classList.toggle('fa-angle-down');
         textColorBtnIcon.classList.toggle('fa-angle-up');
     })
-
-    textColorBox[i].style.backgroundColor = `${textColorLi[i].textContent.toLowerCase()}`;
 }
 
 textColorBtnCtr.addEventListener("click", () => {
     textColor.classList.toggle('hidden');
-    if(textColorBtnIcon.classList.contains('fa-angle-down')) {
-        textColorBtnIcon.classList.remove('fa-angle-down');
-        textColorBtnIcon.classList.add('fa-angle-up');
-    } else {
-        textColorBtnIcon.classList.add('fa-angle-down');
-        textColorBtnIcon.classList.remove('fa-angle-up');
-    }
+    textColorBtnIcon.classList.toggle('fa-angle-down');
+    textColorBtnIcon.classList.toggle('fa-angle-up');
 })
 
 textColorInputCustom.addEventListener("change", () => {
@@ -369,13 +350,8 @@ for (let i = 0; i < bgColorLi.length; i++) {
 
 bgColorBtnCtr.addEventListener("click", () => {
     bgColor.classList.toggle('hidden');
-    if(bgColorBtnIcon.classList.contains('fa-angle-down')) {
-        bgColorBtnIcon.classList.remove('fa-angle-down');
-        bgColorBtnIcon.classList.add('fa-angle-up');
-    } else {
-        bgColorBtnIcon.classList.add('fa-angle-down');
-        bgColorBtnIcon.classList.remove('fa-angle-up');
-    }
+    bgColorBtnIcon.classList.toggle('fa-angle-down');
+    bgColorBtnIcon.classList.toggle('fa-angle-up');
 })
 
 bgColorInputCustom.addEventListener("change", () => {
@@ -483,13 +459,8 @@ for (let i = 0; i < textCasesLi.length; i++) {
 
 textCasesBtnCtr.addEventListener("click", () => {
     textCases.classList.toggle('hidden');
-    if(textCasesBtnIcon.classList.contains('fa-angle-down')) {
-        textCasesBtnIcon.classList.remove('fa-angle-down');
-        textCasesBtnIcon.classList.add('fa-angle-up');
-    } else {
-        textCasesBtnIcon.classList.add('fa-angle-down');
-        textCasesBtnIcon.classList.remove('fa-angle-up');
-    }
+    textCasesBtnIcon.classList.toggle('fa-angle-down');
+    textCasesBtnIcon.classList.toggle('fa-angle-up');
 })
 
 // Text shadow
@@ -526,13 +497,8 @@ for(let i = 0; i < textShadowLi.length; i++) {
 
 textShadowBtnCtr.addEventListener("click", () => {
     textShadow.classList.toggle('hidden');
-    if(textShadowBtnIcon.classList.contains('fa-angle-down')) {
-        textShadowBtnIcon.classList.remove('fa-angle-down');
-        textShadowBtnIcon.classList.add('fa-angle-up');
-    } else {
-        textShadowBtnIcon.classList.add('fa-angle-down');
-        textShadowBtnIcon.classList.remove('fa-angle-up');
-    }
+    textShadowBtnIcon.classList.toggle('fa-angle-down');
+    textShadowBtnIcon.classList.toggle('fa-angle-up');
 })
 
 copyCodeBtn.addEventListener("click", function() {
