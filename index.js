@@ -41,14 +41,6 @@ const bgColorLi = document.querySelectorAll('.bg-color li');
 const bgColorBox = document.querySelectorAll('.bg-color-box');
 const bgColorBtnBox = document.querySelector('.bg-color-btn-box');
 
-const textBorderColor = document.querySelector('.text-border-color');
-const textBorderColorBtn = document.querySelector('.text-border-color-btn');
-const textBorderColorBtnCtr = document.querySelector(".text-border-color-btn-ctr");
-const textBorderColorBtnIcon = document.querySelector('.text-border-color-btn-ctr i');
-const textBorderColorLi = document.querySelectorAll('.text-border-color li');
-const textBorderColorBox = document.querySelectorAll('.text-border-color-box');
-const textBorderColorBtnBox = document.querySelector('.text-border-color-btn-box');
-
 const btnUnderline = document.querySelector('.btn-underline');
 const btnItalic = document.querySelector('.btn-italic');
 const btnBold = document.querySelector('.btn-bold');
@@ -127,12 +119,7 @@ const init = function () {
     bgColorTextCustom.textContent = "#ffffff";
     bgColorInputCustom.value = "#ffffff";
 
-    textBorderColorBtnBox.style.backgroundColor = "transparent"
     textInput.style.textShadow = "none"
-    codeTextBorder.textContent = "none"
-
-    textInput.style.textShadow = "none"
-    codeTextBorder.textContent = "text-shadow: none;"
 
     textInput.classList.remove("underline-text")
     btnUnderline.classList.remove("active")
@@ -212,10 +199,6 @@ document.addEventListener('click', function(e) {
 
     if (!e.target.closest('.bg-color-btn-ctr')) {
         bgColor.classList.add('hidden');
-    }
-
-    if (!e.target.closest('.text-border-color-btn-ctr')) {
-        textBorderColor.classList.add('hidden');
     }
 
     if (!e.target.closest('.text-cases-btn-ctr')) {
@@ -402,38 +385,6 @@ bgColorInputCustom.addEventListener("change", () => {
     codeBackgroundColor.textContent = `background-color: ${bgColorTextCustom.textContent};`;
 })
 
-// Text Border
-textBorderColor.classList.add('hidden');
-
-for (let i = 0; i < textBorderColorLi.length; i++) {
-    textBorderColorLi[i].addEventListener("mouseover", (e) => {
-        let clr = textBorderColorLi[i].textContent.toLowerCase();
-        textInput.style.textShadow = "1px 1px 0 " + clr + ", -1px -1px 0 " + clr + ", 1px -1px 0 " + clr + ", -1px 1px 0 " + clr;
-        codeTextBorder.textContent = "text-shadow: " + "1px 1px 0 " + clr + ", -1px -1px 0 " + clr + ", 1px -1px 0 " + clr + ", -1px 1px 0 " + clr + ";"
-        textBorderColorBtnBox.style.backgroundColor = `${textBorderColorLi[i].textContent.toLowerCase()}`;
-    })
-
-    textBorderColorLi[i].addEventListener("click", () => {
-        textBorderColor.classList.toggle('hidden');
-        textBorderColorBtnIcon.classList.toggle('fa-angle-up');
-        textBorderColorBtnIcon.classList.toggle('fa-angle-down');
-        codeTextBorder.textContent = "1px 1px 0 " + clr + ", -1px -1px 0 " + clr + ", 1px -1px 0 " + clr + ", -1px 1px 0 " + clr;
-    })
-
-    textBorderColorBox[i].style.backgroundColor = `${textBorderColorLi[i].textContent.toLowerCase()}`;
-}
-
-textBorderColorBtnCtr.addEventListener("click", () => {
-    textBorderColor.classList.toggle('hidden');
-    if(textBorderColorBtnIcon.classList.contains('fa-angle-down')) {
-        textBorderColorBtnIcon.classList.remove('fa-angle-down');
-        textBorderColorBtnIcon.classList.add('fa-angle-up');
-    } else {
-        textBorderColorBtnIcon.classList.add('fa-angle-down');
-        textBorderColorBtnIcon.classList.remove('fa-angle-up');
-    }
-})
-
 // Button Underline
 btnUnderline.addEventListener("click", () => {
     textInput.classList.toggle("underline-text")
@@ -543,94 +494,33 @@ textCasesBtnCtr.addEventListener("click", () => {
 
 // Text shadow
 textShadow.classList.toggle("hidden");
+const shadows = [
+    'none',
+    '1px 3px 2px rgba(150, 150, 150, 0.8)',
+    '4px 2px 5px rgba(150, 150, 150, 0.6)',
+    '2px 5px 3px rgba(150, 150, 150, 0.7)',
+    '3px 1px 4px rgba(150, 150, 150, 0.5)',
+    '6px 4px 2px rgba(150, 150, 150, 0.9)',
+    '2px 7px 6px rgba(150, 150, 150, 0.4)',
+    '5px 3px 4px rgba(150, 150, 150, 0.75)',
+    '8px 1px 3px rgba(150, 150, 150, 0.65)',
+    '3px 6px 5px rgba(150, 150, 150, 0.55)',
+    '7px 2px 4px rgba(150, 150, 150, 0.85)'
+  ];
 
 for(let i = 0; i < textShadowLi.length; i++) {
     textShadowLi[i].addEventListener("mouseover", (e) => {
         textShadowBtn.textContent = `${e.target.textContent}`;
-        
-        let shadowText = textInput.style.textShadow;
-        if (e.target.textContent === "None") {
-            shadowText = "none"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-1") {
-            shadowText = "2px 2px 5px gray"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-2") {
-            shadowText = "4px 4px 10px gray"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-3") {
-            shadowText = "0 4px 10px gray"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-4") {
-            shadowText = "4px 4px 2px rgba(150, 150, 150, 1)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-5") {
-            shadowText = "6px 3px 5px rgba(150, 150, 150, 1)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-6") {
-            shadowText = "2px 1px 13px rgba(150, 150, 150, 1)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-7") {
-            shadowText = "8px 5px 5px rgba(150, 150, 150, 0.7)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (textShadow.textContent === "Shadow-8") {
-            shadowText = "-5px -3px 3px rgba(150, 150, 150, 0.7)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        }
+        textInput.style.textShadow = `${shadows[i]}`;
+        codeTextShadow.textContent = `text-shadow: ${shadows[i]};`;
     })
 
     textShadowLi[i].addEventListener("click", (e) => {
         textShadow.classList.toggle('hidden');
         textShadowBtnIcon.classList.toggle('fa-angle-up');
-        textShadowBtnIcon.classList.toggle('fa-angle-down');
-
-        let shadowText = textInput.style.textShadow;
-        if (e.target.textContent === "None") {
-            shadowText = "none"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-1") {
-            shadowText = "2px 2px 5px gray"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-2") {
-            shadowText = "4px 4px 10px gray"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-3") {
-            shadowText = "0 4px 10px gray"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-4") {
-            shadowText = "4px 4px 2px rgba(150, 150, 150, 1)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-5") {
-            shadowText = "6px 3px 5px rgba(150, 150, 150, 1)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-6") {
-            shadowText = "2px 1px 13px rgba(150, 150, 150, 1)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (e.target.textContent === "Shadow-7") {
-            shadowText = "8px 5px 5px rgba(150, 150, 150, 0.7)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        } else if (textShadow.textContent === "Shadow-8") {
-            shadowText = "-5px -3px 3px rgba(150, 150, 150, 0.7)"
-            textInput.style.textShadow = shadowText
-            codeTextShadow.textContent = "text-shadow: " + shadowText + ";"
-        }
+        textShadowBtnIcon.classList.toggle('fa-angle-down');        
+        textInput.style.textShadow = `${shadows[i]}`;
+        codeTextShadow.textContent = `text-shadow: ${shadows[i]};`;
     })
 }
 
@@ -644,17 +534,6 @@ textShadowBtnCtr.addEventListener("click", () => {
         textShadowBtnIcon.classList.remove('fa-angle-up');
     }
 })
-
-
-// Copy generated code
-// copyCodeBtn.addEventListener("click", (element) => {
-//     var $temp = $("<input>");
-//     $("body").append($temp);
-//     $temp.val($(element).text()).select();
-//     document.execCommand("copy");
-//     $temp.remove();
-//     alert("Code copied successfully!");
-// })
 
 copyCodeBtn.addEventListener("click", function() {
     var textToCopy = document.getElementById("code").textContent;
