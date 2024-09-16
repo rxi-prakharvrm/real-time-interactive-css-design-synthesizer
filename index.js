@@ -7,6 +7,7 @@ const ddInnerBtn = document.querySelectorAll(".dd-inner-btn");
 const ddMenu = document.querySelectorAll(".dd-menu");
 
 const selectFont = document.querySelector('.select-font');
+const selectFontDDCtr = document.querySelector('.select-font-dd-ctr');
 const selectFontBtnCtr = document.querySelector(".select-font-btn-ctr");
 const selectFontBtn = document.querySelector('.select-font-btn');
 const selectFontBtnIcon = document.querySelector('.select-font-btn-ctr i');
@@ -173,13 +174,56 @@ btnChangeMode.addEventListener("click", () => {
     textInput.classList.toggle('dark-text-input');
     codeContainer.classList.toggle('dark-code-ctr');
     copyCodeBtn.src = "images/copy-light.png";
+
     for(let i = 0; i < ddCtr.length; i++) {
         ddBtnCtr[i].classList.toggle('dark-dd-btn-ctr');
         ddInnerBtn[i].classList.toggle('dark-dd-inner-btn');
         ddMenu[i].classList.toggle('dark-dd-menu');
     }
+
     for(let i = 0; i < btn.length; i++) {
         btn[i].classList.toggle('dark-btn');
+    }
+})
+
+// hide all the dropdowns on clicking outside
+document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dd-ctr')) {
+        for (let i = 0; i < ddMenu.length; i++) {
+            ddMenu[i].classList.add('hidden');
+        }
+    }
+
+    if (!e.target.closest('.select-font-dd-ctr')) {
+        selectFont.classList.add('hidden');
+    }
+
+    if (!e.target.closest('.font-size-btn-ctr')) {
+        fontSize.classList.add('hidden');
+    }
+
+    if (!e.target.closest('.font-weight-btn-ctr')) {
+        fontWeight.classList.add('hidden');
+    }
+
+    if (!e.target.closest('.text-color-btn-ctr')) {
+        textColor.classList.add('hidden');
+    }
+
+    if (!e.target.closest('.bg-color-btn-ctr')) {
+        bgColor.classList.add('hidden');
+    }
+
+    if (!e.target.closest('.text-border-color-btn-ctr')) {
+        textBorderColor.classList.add('hidden');
+    }
+
+    if (!e.target.closest('.text-cases-btn-ctr')) {
+        textCases.classList.add('hidden');
+    }
+
+    if (!e.target.closest('.text-shadow-btn-ctr')) {
+        textShadow.classList.add('hidden');
     }
 })
 
